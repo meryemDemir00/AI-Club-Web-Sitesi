@@ -1,0 +1,35 @@
+import type { Metadata } from 'next'
+import { Inter, Space_Grotesk } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import './globals.css'
+
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: '--font-inter'
+});
+
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ["latin"],
+  variable: '--font-space-grotesk'
+});
+
+export const metadata: Metadata = {
+  title: 'AI Club - Yapay Zeka Kulubu',
+  description: 'Yapay zeka tutkunlarinin bulusma noktasi. Etkinlikler, projeler ve egitimlerle gelecegi birlikte sekillendiriyoruz.',
+  keywords: ['yapay zeka', 'AI', 'makine ogrenimi', 'deep learning', 'kulup'],
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="tr">
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  )
+}
