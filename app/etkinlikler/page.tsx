@@ -43,15 +43,12 @@ function formatDate(dateStr: string): string {
 function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => void }) {
   const typeConfig = eventTypeConfig[event.type]
   const Icon = typeConfig.icon
-  const isCompleted = new Date(event.date) < new Date()
   const isPassive = event.isActive === false
-  const cardStateClass = isCompleted && isPassive
+  const isCompleted = isPassive
+  const hasUnlimitedCapacity = event.unlimitedCapacity === true
+  const cardStateClass = isCompleted
     ? 'bg-muted/50 opacity-45 saturate-[0.35] grayscale-[0.5]'
-    : isCompleted
-      ? 'bg-muted/40 opacity-55 saturate-50 grayscale-[0.25]'
-      : isPassive
-        ? 'bg-muted/30 opacity-65 saturate-[0.6] grayscale-[0.35]'
-        : 'hover:shadow-xl hover:shadow-primary/10'
+    : 'hover:shadow-xl hover:shadow-primary/10'
 
   return (
     <div
@@ -59,7 +56,7 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => 
     >
       <div
         className={`h-0.5 w-full ${
-          isCompleted || isPassive
+          isCompleted
             ? 'bg-border/70'
             : 'bg-gradient-to-r from-primary/60 via-primary to-primary/60'
         } group-hover:opacity-100 transition-opacity`}
@@ -114,11 +111,11 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => 
           </div>
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <Users className="w-3.5 h-3.5 shrink-0" />
-            <span>{event.registered}/{event.capacity} Katilimci</span>
+            <span>{hasUnlimitedCapacity ? `${event.registered} Katilimci - Sinirsiz` : `${event.registered}/${event.capacity} Katilimci`}</span>
           </div>
         </div>
 
-        {!isCompleted && !isPassive && (
+        {!isCompleted && !hasUnlimitedCapacity && (
           <div className="mb-4">
             <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
               <div
@@ -136,7 +133,7 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => 
 
         <Button
           className="w-full gap-2 group/btn"
-          variant={isCompleted || isPassive ? 'outline' : 'default'}
+          variant={isCompleted ? 'outline' : 'default'}
           onClick={() => onDetail(event)}
         >
           <span>Detaylari Goruntule</span>
@@ -152,8 +149,9 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
 
   const typeConfig = eventTypeConfig[event.type]
   const Icon = typeConfig.icon
-  const isCompleted = new Date(event.date) < new Date()
   const isPassive = event.isActive === false
+  const isCompleted = isPassive
+  const hasUnlimitedCapacity = event.unlimitedCapacity === true
 
   const mapQuery = event.mapQuery || event.location
   const mapsEmbedUrl = mapQuery
@@ -208,7 +206,7 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
               <Users className="w-5 h-5 text-primary shrink-0" />
               <div>
                 <p className="text-xs text-muted-foreground">Katilimci</p>
-                <p className="text-sm font-medium">{event.registered} / {event.capacity}</p>
+                <p className="text-sm font-medium">{hasUnlimitedCapacity ? `${event.registered} / Sinirsiz` : `${event.registered} / ${event.capacity}`}</p>
               </div>
             </div>
           </div>
@@ -245,27 +243,29 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
             </div>
           )}
 
-          <div>
-            <div className="flex justify-between text-sm mb-2">
-              <span className="text-muted-foreground">Doluluk Orani</span>
-              <span className="font-medium">
-                {Math.round((event.registered / event.capacity) * 100)}%
-              </span>
+          {!hasUnlimitedCapacity && (
+            <div>
+              <div className="flex justify-between text-sm mb-2">
+                <span className="text-muted-foreground">Doluluk Orani</span>
+                <span className="font-medium">
+                  {Math.round((event.registered / event.capacity) * 100)}%
+                </span>
+              </div>
+              <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-primary rounded-full"
+                  style={{ width: `${Math.min((event.registered / event.capacity) * 100, 100)}%` }}
+                />
+              </div>
             </div>
-            <div className="h-2 bg-secondary rounded-full overflow-hidden">
-              <div
-                className="h-full bg-primary rounded-full"
-                style={{ width: `${Math.min((event.registered / event.capacity) * 100, 100)}%` }}
-              />
-            </div>
-          </div>
+          )}
 
-          {!isCompleted && !isPassive && event.registered < event.capacity && (
+          {!isCompleted && (hasUnlimitedCapacity || event.registered < event.capacity) && (
             <Button className="w-full" size="lg">
               Kayit Ol
             </Button>
           )}
-          {!isCompleted && !isPassive && event.registered >= event.capacity && (
+          {!isCompleted && !hasUnlimitedCapacity && event.registered >= event.capacity && (
             <Button className="w-full" size="lg" variant="secondary" disabled>
               Kontenjan Doldu
             </Button>
@@ -295,11 +295,11 @@ export default function EventsPage() {
   }, [])
 
   const activeEvents = events
-    .filter(e => new Date(e.date) >= new Date())
+    .filter(e => e.isActive !== false)
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   const completedEvents = events
-    .filter(e => new Date(e.date) < new Date())
+    .filter(e => e.isActive === false)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   return (

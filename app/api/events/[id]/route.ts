@@ -18,7 +18,9 @@ export async function PUT(
       return NextResponse.json({ success: true, event })
     }
 
-    if (body.capacity !== undefined) {
+    if (body.unlimitedCapacity === true) {
+      body.capacity = 0
+    } else if (body.capacity !== undefined) {
       body.capacity = parseInt(body.capacity)
     }
 

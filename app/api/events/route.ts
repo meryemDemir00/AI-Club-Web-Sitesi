@@ -13,9 +13,13 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { title, description, date, time, location, mapQuery, type, capacity, isActive } = body
+    const { title, description, date, time, location, mapQuery, type, capacity, unlimitedCapacity, isActive } = body
 
-    if (!title || !description || !date || !time || !location || !type || !capacity) {
+    if (!title || !description || !date || !time || !location || !type) {
+      return NextResponse.json({ error: 'Zorunlu alanlar eksik' }, { status: 400 })
+    }
+
+    if (!unlimitedCapacity && !capacity) {
       return NextResponse.json({ error: 'Zorunlu alanlar eksik' }, { status: 400 })
     }
 
@@ -32,7 +36,8 @@ export async function POST(request: Request) {
       location,
       mapQuery: mapQuery || location,
       type,
-      capacity: parseInt(capacity),
+      capacity: unlimitedCapacity ? 0 : parseInt(capacity),
+      unlimitedCapacity: unlimitedCapacity === true,
       isActive: isActive !== false
     })
 

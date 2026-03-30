@@ -18,9 +18,9 @@ import {
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type TeamForm = { name: string; role: string; department: string; bio: string; linkedin: string; github: string }
-type EventForm = { title: string; description: string; date: string; time: string; location: string; mapQuery: string; type: string; capacity: string }
+type EventForm = { title: string; description: string; date: string; time: string; location: string; mapQuery: string; type: string; capacity: string; unlimitedCapacity: boolean }
 const emptyTeamForm: TeamForm = { name: '', role: '', department: '', bio: '', linkedin: '', github: '' }
-const emptyEventForm: EventForm = { title: '', description: '', date: '', time: '', location: '', mapQuery: '', type: 'workshop', capacity: '50' }
+const emptyEventForm: EventForm = { title: '', description: '', date: '', time: '', location: '', mapQuery: '', type: 'workshop', capacity: '50', unlimitedCapacity: false }
 const teamRoleOptions = [
   'Baskan',
   'Baskan Yardimcisi',
@@ -173,10 +173,14 @@ export default function AdminDashboard() {
   // ─── Event handlers ───────────────────────────────────
   const handleSaveEvent = async () => {
     if (!eventForm.title || !eventForm.date || !eventForm.time || !eventForm.location) return
+    if (!eventForm.unlimitedCapacity && !eventForm.capacity) return
     if (editingEventId) {
       const res = await fetch(`/api/events/${editingEventId}`, {
         method: 'PUT', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...eventForm, capacity: parseInt(eventForm.capacity) })
+        body: JSON.stringify({
+          ...eventForm,
+          capacity: eventForm.unlimitedCapacity ? 0 : parseInt(eventForm.capacity)
+        })
       })
       if (res.ok) {
         const { event } = await res.json()
@@ -200,15 +204,15 @@ export default function AdminDashboard() {
     setEventForm({
       title: ev.title, description: ev.description, date: ev.date,
       time: ev.time, location: ev.location, mapQuery: ev.mapQuery || '',
-      type: ev.type, capacity: ev.capacity.toString()
+      type: ev.type, capacity: ev.capacity.toString(), unlimitedCapacity: ev.unlimitedCapacity === true
     })
     setEditingEventId(ev.id)
     setShowEventForm(true)
   }
-  const handleToggleEvent = async (id: string) => {
+  const handleToggleEvent = async (id: string, isCurrentlyActive: boolean) => {
     const res = await fetch(`/api/events/${id}`, {
       method: 'PUT', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'toggle' })
+      body: JSON.stringify({ isActive: !isCurrentlyActive })
     })
     if (res.ok) {
       const { event } = await res.json()
@@ -549,7 +553,33 @@ export default function AdminDashboard() {
                       </div>
                       <div className="space-y-1.5">
                         <Label>Kontenjan</Label>
-                        <Input type="number" value={eventForm.capacity} onChange={e => setEventForm(f => ({ ...f, capacity: e.target.value }))} min="1" />
+                        <div className="rounded-lg border border-input bg-background p-2">
+                          <button
+                            type="button"
+                            onClick={() => setEventForm(f => ({ ...f, unlimitedCapacity: !f.unlimitedCapacity }))}
+                            className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm hover:bg-secondary/60 transition-colors"
+                          >
+                            <span className="font-medium">
+                              {eventForm.unlimitedCapacity ? 'Kontenjan Kapali' : 'Kontenjan Acik'}
+                            </span>
+                            {eventForm.unlimitedCapacity ? <ToggleLeft className="w-5 h-5 text-muted-foreground" /> : <ToggleRight className="w-5 h-5 text-primary" />}
+                          </button>
+                          {!eventForm.unlimitedCapacity ? (
+                            <div className="mt-2">
+                              <Input
+                                type="number"
+                                value={eventForm.capacity}
+                                onChange={e => setEventForm(f => ({ ...f, capacity: e.target.value }))}
+                                min="1"
+                                placeholder="50"
+                              />
+                            </div>
+                          ) : (
+                            <p className="mt-2 px-2 text-xs text-muted-foreground">
+                              Bu etkinlikte kontenjan siniri uygulanmayacak.
+                            </p>
+                          )}
+                        </div>
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-3">
@@ -592,25 +622,27 @@ export default function AdminDashboard() {
                           <div className="flex items-center gap-2 mb-1">
                             <h3 className="font-semibold">{event.title}</h3>
                             <Badge variant="outline" className="text-xs">{event.type}</Badge>
-                            {event.isActive
+                            {event.isActive !== false
                               ? <Badge className="text-xs bg-green-500/10 text-green-500">Aktif</Badge>
-                              : <Badge variant="outline" className="text-xs text-muted-foreground">Pasif</Badge>
+                              : <Badge variant="outline" className="text-xs text-muted-foreground">Tamamlandi</Badge>
                             }
                           </div>
                           <p className="text-xs text-muted-foreground">
                             {new Date(event.date).toLocaleDateString('tr-TR')} • {event.time} • {event.location}
                           </p>
-                          <p className="text-xs text-muted-foreground">{event.registered}/{event.capacity} katılımcı</p>
+                          <p className="text-xs text-muted-foreground">
+                            {event.unlimitedCapacity ? `${event.registered} katilimci - sinirsiz kontenjan` : `${event.registered}/${event.capacity} katılımcı`}
+                          </p>
                         </div>
                         <div className="flex gap-1.5">
                           <Button
                             size="sm"
                             variant="outline"
-                            onClick={() => handleToggleEvent(event.id)}
+                            onClick={() => handleToggleEvent(event.id, event.isActive !== false)}
                             className="gap-1.5 text-xs"
                           >
-                            {event.isActive ? <ToggleRight className="w-3.5 h-3.5" /> : <ToggleLeft className="w-3.5 h-3.5" />}
-                            {event.isActive ? 'Kapat' : 'Aç'}
+                            {event.isActive !== false ? <ToggleRight className="w-3.5 h-3.5" /> : <ToggleLeft className="w-3.5 h-3.5" />}
+                            {event.isActive !== false ? 'Tamamlandi' : 'Yeniden Aktif Et'}
                           </Button>
                           <Button size="icon" variant="ghost" className="h-8 w-8" onClick={() => handleEditEvent(event)}>
                             <Pencil className="w-3.5 h-3.5" />
@@ -637,3 +669,6 @@ export default function AdminDashboard() {
     </div>
   )
 }
+
+
+

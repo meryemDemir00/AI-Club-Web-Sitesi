@@ -23,6 +23,7 @@ export interface Event {
   mapQuery: string; // Google Maps search query
   type: 'workshop' | 'seminar' | 'hackathon' | 'meetup';
   capacity: number;
+  unlimitedCapacity?: boolean;
   registered: number;
   isActive: boolean;
 }
@@ -48,8 +49,8 @@ export interface ContactMessage {
   read: boolean;
 }
 
-// ─── Team Members (mutable, managed via admin) ───────────────────────────────
-let teamMembers: TeamMember[] = [
+// ─── Seed data ────────────────────────────────────────────────────────────────
+const initialTeamMembers: TeamMember[] = [
   {
     id: '1',
     name: 'Ahmet Yilmaz',
@@ -110,8 +111,7 @@ let teamMembers: TeamMember[] = [
   }
 ];
 
-// ─── Events (mutable, managed via admin) ─────────────────────────────────────
-let events: Event[] = [
+const initialEvents: Event[] = [
   {
     id: '1',
     title: 'ChatGPT ve Prompt Muhendisligi',
@@ -122,6 +122,7 @@ let events: Event[] = [
     mapQuery: 'Konferans Salonu A, Istanbul',
     type: 'workshop',
     capacity: 50,
+    unlimitedCapacity: false,
     registered: 32,
     isActive: true
   },
@@ -135,6 +136,7 @@ let events: Event[] = [
     mapQuery: 'Mühendislik Fakültesi, Istanbul',
     type: 'hackathon',
     capacity: 100,
+    unlimitedCapacity: false,
     registered: 78,
     isActive: true
   },
@@ -148,6 +150,7 @@ let events: Event[] = [
     mapQuery: '',
     type: 'seminar',
     capacity: 200,
+    unlimitedCapacity: false,
     registered: 145,
     isActive: true
   },
@@ -161,6 +164,7 @@ let events: Event[] = [
     mapQuery: 'Bilgisayar Lab, Istanbul',
     type: 'workshop',
     capacity: 30,
+    unlimitedCapacity: false,
     registered: 28,
     isActive: true
   },
@@ -174,14 +178,35 @@ let events: Event[] = [
     mapQuery: 'Öğrenci Merkezi, Istanbul',
     type: 'meetup',
     capacity: 40,
+    unlimitedCapacity: false,
     registered: 25,
     isActive: true
   }
 ];
 
+type DataStore = {
+  teamMembers: TeamMember[];
+  events: Event[];
+  members: Member[];
+  messages: ContactMessage[];
+}
+
+const globalStore = globalThis as typeof globalThis & { __aiClubDataStore?: DataStore };
+
+const store: DataStore = globalStore.__aiClubDataStore ?? {
+  teamMembers: initialTeamMembers,
+  events: initialEvents,
+  members: [],
+  messages: []
+};
+
+globalStore.__aiClubDataStore = store;
+
 // ─── In-memory runtime data ───────────────────────────────────────────────────
-let members: Member[] = [];
-let messages: ContactMessage[] = [];
+let teamMembers = store.teamMembers;
+let events = store.events;
+let members = store.members;
+let messages = store.messages;
 
 // ─── Member functions ─────────────────────────────────────────────────────────
 export function getMembers(): Member[] {
@@ -254,12 +279,18 @@ export function deleteMessage(id: string): boolean {
 
 // ─── Event functions ──────────────────────────────────────────────────────────
 export function getEvents(): Event[] {
-  return events;
+  return events.map(event => ({
+    ...event,
+    isActive: event.isActive !== false,
+    unlimitedCapacity: event.unlimitedCapacity === true
+  }));
 }
 
 export function addEvent(event: Omit<Event, 'id' | 'registered'>): Event {
   const newEvent: Event = {
     ...event,
+    isActive: event.isActive !== false,
+    unlimitedCapacity: event.unlimitedCapacity === true,
     id: Date.now().toString(),
     registered: 0
   };
