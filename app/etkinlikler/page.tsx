@@ -44,18 +44,22 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => 
   const typeConfig = eventTypeConfig[event.type]
   const Icon = typeConfig.icon
   const isCompleted = new Date(event.date) < new Date()
+  const isPassive = event.isActive === false
+  const cardStateClass = isCompleted && isPassive
+    ? 'bg-muted/50 opacity-45 saturate-[0.35] grayscale-[0.5]'
+    : isCompleted
+      ? 'bg-muted/40 opacity-55 saturate-50 grayscale-[0.25]'
+      : isPassive
+        ? 'bg-muted/30 opacity-65 saturate-[0.6] grayscale-[0.35]'
+        : 'hover:shadow-xl hover:shadow-primary/10'
 
   return (
     <div
-      className={`group relative bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 flex flex-col ${
-        isCompleted
-          ? 'bg-muted/40 opacity-55 saturate-50 grayscale-[0.25]'
-          : 'hover:shadow-xl hover:shadow-primary/10'
-      }`}
+      className={`group relative bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 flex flex-col ${cardStateClass}`}
     >
       <div
         className={`h-0.5 w-full ${
-          isCompleted
+          isCompleted || isPassive
             ? 'bg-border/70'
             : 'bg-gradient-to-r from-primary/60 via-primary to-primary/60'
         } group-hover:opacity-100 transition-opacity`}
@@ -114,7 +118,7 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => 
           </div>
         </div>
 
-        {!isCompleted && (
+        {!isCompleted && !isPassive && (
           <div className="mb-4">
             <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
               <div
@@ -132,7 +136,7 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => 
 
         <Button
           className="w-full gap-2 group/btn"
-          variant={isCompleted ? 'outline' : 'default'}
+          variant={isCompleted || isPassive ? 'outline' : 'default'}
           onClick={() => onDetail(event)}
         >
           <span>Detaylari Goruntule</span>
@@ -149,6 +153,7 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
   const typeConfig = eventTypeConfig[event.type]
   const Icon = typeConfig.icon
   const isCompleted = new Date(event.date) < new Date()
+  const isPassive = event.isActive === false
 
   const mapQuery = event.mapQuery || event.location
   const mapsEmbedUrl = mapQuery
@@ -166,6 +171,7 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
             <Badge variant="outline" className={`text-xs ${typeConfig.color}`}>
               {typeConfig.label}
             </Badge>
+            {isPassive && <Badge variant="outline" className="text-xs">Pasif Etkinlik</Badge>}
             {isCompleted && <Badge variant="outline" className="text-xs">Tamamlanmis Etkinlik</Badge>}
           </div>
           <DialogTitle className="text-xl font-bold text-left">{event.title}</DialogTitle>
@@ -254,14 +260,19 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
             </div>
           </div>
 
-          {!isCompleted && event.registered < event.capacity && (
+          {!isCompleted && !isPassive && event.registered < event.capacity && (
             <Button className="w-full" size="lg">
               Kayit Ol
             </Button>
           )}
-          {!isCompleted && event.registered >= event.capacity && (
+          {!isCompleted && !isPassive && event.registered >= event.capacity && (
             <Button className="w-full" size="lg" variant="secondary" disabled>
               Kontenjan Doldu
+            </Button>
+          )}
+          {isPassive && (
+            <Button className="w-full" size="lg" variant="secondary" disabled>
+              Etkinlik Pasif
             </Button>
           )}
         </div>
@@ -278,7 +289,7 @@ export default function EventsPage() {
   useEffect(() => {
     fetch('/api/events')
       .then(r => r.json())
-      .then(data => setEvents(data.filter((e: Event) => e.isActive !== false)))
+      .then(data => setEvents(data))
       .catch(console.error)
       .finally(() => setIsLoading(false))
   }, [])
