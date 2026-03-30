@@ -22,41 +22,51 @@ import {
   Trophy,
   Coffee,
   ArrowRight,
-  ExternalLink
+  ExternalLink,
 } from 'lucide-react'
 
 const eventTypeConfig = {
   workshop: { label: 'Workshop', icon: Code, color: 'bg-violet-500/10 text-violet-400 border-violet-500/20' },
   seminar: { label: 'Seminer', icon: Presentation, color: 'bg-blue-500/10 text-blue-400 border-blue-500/20' },
   hackathon: { label: 'Hackathon', icon: Trophy, color: 'bg-amber-500/10 text-amber-400 border-amber-500/20' },
-  meetup: { label: 'Buluşma', icon: Coffee, color: 'bg-green-500/10 text-green-400 border-green-500/20' }
+  meetup: { label: 'Bulusma', icon: Coffee, color: 'bg-green-500/10 text-green-400 border-green-500/20' },
 }
 
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('tr-TR', {
     day: 'numeric',
     month: 'long',
-    year: 'numeric'
+    year: 'numeric',
   })
 }
 
 function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => void }) {
   const typeConfig = eventTypeConfig[event.type]
   const Icon = typeConfig.icon
-  const isPast = new Date(event.date) < new Date()
+  const isCompleted = new Date(event.date) < new Date()
 
   return (
-    <div className={`group relative bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 flex flex-col ${isPast ? 'opacity-70' : ''}`}>
-      {/* Top accent bar */}
-      <div className={`h-0.5 w-full ${isPast ? 'bg-border' : 'bg-gradient-to-r from-primary/60 via-primary to-primary/60'} group-hover:opacity-100 transition-opacity`} />
+    <div
+      className={`group relative bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 flex flex-col ${
+        isCompleted
+          ? 'bg-muted/40 opacity-55 saturate-50 grayscale-[0.25]'
+          : 'hover:shadow-xl hover:shadow-primary/10'
+      }`}
+    >
+      <div
+        className={`h-0.5 w-full ${
+          isCompleted
+            ? 'bg-border/70'
+            : 'bg-gradient-to-r from-primary/60 via-primary to-primary/60'
+        } group-hover:opacity-100 transition-opacity`}
+      />
 
-      {/* Subtle glow */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"
         style={{ background: 'radial-gradient(ellipse at 0% 0%, hsl(var(--primary) / 0.08) 0%, transparent 60%)' }}
       />
 
       <div className="relative p-5 flex flex-col flex-1">
-        {/* Header */}
         <div className="flex items-start justify-between mb-3 gap-3">
           <div className={`w-11 h-11 rounded-xl border ${typeConfig.color} flex items-center justify-center shrink-0`}>
             <Icon className="w-5 h-5" />
@@ -70,15 +80,14 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => 
                 Pasif
               </Badge>
             )}
-            {isPast && (
+            {isCompleted && (
               <Badge variant="outline" className="text-xs text-muted-foreground">
-                Geçmiş
+                Tamamlanmis
               </Badge>
             )}
           </div>
         </div>
 
-        {/* Title & Description */}
         <h3 className="font-bold text-base mb-2 group-hover:text-primary transition-colors duration-200 line-clamp-2">
           {event.title}
         </h3>
@@ -86,7 +95,6 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => 
           {event.description}
         </p>
 
-        {/* Meta */}
         <div className="space-y-1.5 mb-4">
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <Calendar className="w-3.5 h-3.5 shrink-0" />
@@ -102,12 +110,11 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => 
           </div>
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <Users className="w-3.5 h-3.5 shrink-0" />
-            <span>{event.registered}/{event.capacity} Katılımcı</span>
+            <span>{event.registered}/{event.capacity} Katilimci</span>
           </div>
         </div>
 
-        {/* Progress */}
-        {!isPast && (
+        {!isCompleted && (
           <div className="mb-4">
             <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
               <div
@@ -118,18 +125,17 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (e: Event) => 
             <p className="text-xs text-muted-foreground mt-1">
               {event.capacity - event.registered <= 0
                 ? 'Kontenjan doldu'
-                : `${event.capacity - event.registered} yer kaldı`}
+                : `${event.capacity - event.registered} yer kaldi`}
             </p>
           </div>
         )}
 
-        {/* Button */}
         <Button
           className="w-full gap-2 group/btn"
-          variant={isPast ? 'outline' : 'default'}
+          variant={isCompleted ? 'outline' : 'default'}
           onClick={() => onDetail(event)}
         >
-          <span>Detayları Görüntüle</span>
+          <span>Detaylari Goruntule</span>
           <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
         </Button>
       </div>
@@ -142,7 +148,7 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
 
   const typeConfig = eventTypeConfig[event.type]
   const Icon = typeConfig.icon
-  const isPast = new Date(event.date) < new Date()
+  const isCompleted = new Date(event.date) < new Date()
 
   const mapQuery = event.mapQuery || event.location
   const mapsEmbedUrl = mapQuery
@@ -160,18 +166,16 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
             <Badge variant="outline" className={`text-xs ${typeConfig.color}`}>
               {typeConfig.label}
             </Badge>
-            {isPast && <Badge variant="outline" className="text-xs">Geçmiş Etkinlik</Badge>}
+            {isCompleted && <Badge variant="outline" className="text-xs">Tamamlanmis Etkinlik</Badge>}
           </div>
           <DialogTitle className="text-xl font-bold text-left">{event.title}</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-5">
-          {/* Description */}
           <p className="text-muted-foreground leading-relaxed">
             {event.description}
           </p>
 
-          {/* Event Details */}
           <div className="grid grid-cols-2 gap-3">
             <div className="flex items-center gap-3 p-3 rounded-xl bg-secondary/50 border border-border">
               <Calendar className="w-5 h-5 text-primary shrink-0" />
@@ -197,13 +201,12 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
             <div className="flex items-center gap-3 p-3 rounded-xl bg-secondary/50 border border-border">
               <Users className="w-5 h-5 text-primary shrink-0" />
               <div>
-                <p className="text-xs text-muted-foreground">Katılımcı</p>
+                <p className="text-xs text-muted-foreground">Katilimci</p>
                 <p className="text-sm font-medium">{event.registered} / {event.capacity}</p>
               </div>
             </div>
           </div>
 
-          {/* Google Maps Embed */}
           {mapsEmbedUrl && (
             <div>
               <div className="flex items-center justify-between mb-2">
@@ -218,7 +221,7 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
                   className="text-xs text-primary hover:underline flex items-center gap-1"
                 >
                   <ExternalLink className="w-3 h-3" />
-                  Google Maps&apos;ta Aç
+                  Google Maps&apos;ta Ac
                 </a>
               </div>
               <div className="rounded-xl overflow-hidden border border-border h-48">
@@ -236,10 +239,9 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
             </div>
           )}
 
-          {/* Progress */}
           <div>
             <div className="flex justify-between text-sm mb-2">
-              <span className="text-muted-foreground">Doluluk Oranı</span>
+              <span className="text-muted-foreground">Doluluk Orani</span>
               <span className="font-medium">
                 {Math.round((event.registered / event.capacity) * 100)}%
               </span>
@@ -252,12 +254,12 @@ function EventDetailModal({ event, onClose }: { event: Event | null; onClose: ()
             </div>
           </div>
 
-          {!isPast && event.registered < event.capacity && (
+          {!isCompleted && event.registered < event.capacity && (
             <Button className="w-full" size="lg">
-              Kayıt Ol
+              Kayit Ol
             </Button>
           )}
-          {!isPast && event.registered >= event.capacity && (
+          {!isCompleted && event.registered >= event.capacity && (
             <Button className="w-full" size="lg" variant="secondary" disabled>
               Kontenjan Doldu
             </Button>
@@ -281,11 +283,11 @@ export default function EventsPage() {
       .finally(() => setIsLoading(false))
   }, [])
 
-  const upcomingEvents = events
+  const activeEvents = events
     .filter(e => new Date(e.date) >= new Date())
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
-  const pastEvents = events
+  const completedEvents = events
     .filter(e => new Date(e.date) < new Date())
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
@@ -293,19 +295,17 @@ export default function EventsPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero */}
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Etkinlikler</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Workshop&apos;lardan hackathon&apos;lara, seminerlerden buluşmalara — öğrenme fırsatlarını kaçırmayın.
+              Workshop&apos;lardan hackathon&apos;lara, seminerlerden bulusmalara, ogrenme firsatlarini kacirmayin.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Type Legend */}
       <section className="pb-10">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-3">
@@ -322,10 +322,9 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Upcoming Events */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-8">Yaklaşan Etkinlikler</h2>
+          <h2 className="text-2xl font-bold mb-8">Aktif Etkinlikler</h2>
 
           {isLoading ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -333,29 +332,28 @@ export default function EventsPage() {
                 <div key={i} className="h-80 rounded-2xl bg-card border border-border animate-pulse" />
               ))}
             </div>
-          ) : upcomingEvents.length > 0 ? (
+          ) : activeEvents.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {upcomingEvents.map(event => (
+              {activeEvents.map(event => (
                 <EventCard key={event.id} event={event} onDetail={setSelectedEvent} />
               ))}
             </div>
           ) : (
             <div className="text-center py-16 bg-card rounded-2xl border border-border">
               <Calendar className="w-12 h-12 mx-auto text-muted-foreground mb-4" />
-              <h3 className="font-semibold mb-2">Yaklaşan etkinlik bulunmuyor</h3>
-              <p className="text-muted-foreground text-sm">Yeni etkinlikler için bizi takip etmeye devam edin!</p>
+              <h3 className="font-semibold mb-2">Aktif etkinlik bulunmuyor</h3>
+              <p className="text-muted-foreground text-sm">Yeni etkinlikler icin bizi takip etmeye devam edin.</p>
             </div>
           )}
         </div>
       </section>
 
-      {/* Past Events */}
-      {pastEvents.length > 0 && (
+      {completedEvents.length > 0 && (
         <section className="py-16 border-t border-border bg-card/30">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold mb-8">Geçmiş Etkinlikler</h2>
+            <h2 className="text-2xl font-bold mb-8">Tamamlanmis Etkinlikler</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pastEvents.map(event => (
+              {completedEvents.map(event => (
                 <EventCard key={event.id} event={event} onDetail={setSelectedEvent} />
               ))}
             </div>
@@ -365,7 +363,6 @@ export default function EventsPage() {
 
       <Footer />
 
-      {/* Event Detail Modal */}
       <EventDetailModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
     </div>
   )

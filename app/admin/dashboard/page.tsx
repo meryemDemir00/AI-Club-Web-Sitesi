@@ -21,6 +21,18 @@ type TeamForm = { name: string; role: string; department: string; bio: string; l
 type EventForm = { title: string; description: string; date: string; time: string; location: string; mapQuery: string; type: string; capacity: string }
 const emptyTeamForm: TeamForm = { name: '', role: '', department: '', bio: '', linkedin: '', github: '' }
 const emptyEventForm: EventForm = { title: '', description: '', date: '', time: '', location: '', mapQuery: '', type: 'workshop', capacity: '50' }
+const teamRoleOptions = [
+  'Baskan',
+  'Baskan Yardimcisi',
+  'Sayman',
+  'Yazman',
+  'Sekreter',
+  'Egitim Birimi Baskani',
+  'Sponsorluk Birimi Baskani',
+  'Organizasyon Birimi Baskani',
+  'Arge ve Proje Birimi Baskani',
+  'Sosyal Medya Birimi Baskani'
+]
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 function StatCard({ icon: Icon, count, label, color }: { icon: React.ElementType; count: number; label: string; color: string }) {
@@ -428,7 +440,18 @@ export default function AdminDashboard() {
                       </div>
                       <div className="space-y-1.5">
                         <Label>Rol *</Label>
-                        <Input value={teamForm.role} onChange={e => setTeamForm(f => ({ ...f, role: e.target.value }))} placeholder="Kulüp Başkanı" />
+                        <select
+                          value={teamForm.role}
+                          onChange={e => setTeamForm(f => ({ ...f, role: e.target.value }))}
+                          className="flex h-10 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        >
+                          <option value="">Rol secin</option>
+                          {teamRoleOptions.map(role => (
+                            <option key={role} value={role}>
+                              {role}
+                            </option>
+                          ))}
+                        </select>
                       </div>
                     </div>
                     <div className="space-y-1.5">
