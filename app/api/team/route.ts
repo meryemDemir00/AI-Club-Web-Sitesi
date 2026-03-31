@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getTeamMembers, addTeamMember } from '@/lib/data'
+import { addTeamMember, getTeamMembers, reorderTeamMembers } from '@/lib/data'
 
 export async function GET() {
   try {
@@ -32,5 +32,21 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true, member: newMember })
   } catch {
     return NextResponse.json({ error: 'Ekip üyesi eklenemedi' }, { status: 500 })
+  }
+}
+
+export async function PATCH(request: Request) {
+  try {
+    const body = await request.json()
+    const orderIds = Array.isArray(body.orderIds) ? body.orderIds : []
+
+    if (!orderIds.length) {
+      return NextResponse.json({ error: 'Yeni sira bilgisi zorunludur' }, { status: 400 })
+    }
+
+    const reorderedMembers = reorderTeamMembers(orderIds)
+    return NextResponse.json({ success: true, members: reorderedMembers })
+  } catch {
+    return NextResponse.json({ error: 'Ekip sirasi guncellenemedi' }, { status: 500 })
   }
 }

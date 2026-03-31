@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Brain, Github, Linkedin, Twitter, Instagram, Mail } from 'lucide-react'
+import { SiteLogo } from '@/components/site-logo'
+import { Github, Linkedin, Twitter, Instagram, Mail } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -9,10 +10,8 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Brain className="w-6 h-6 text-primary" />
-              </div>
-              <span className="font-bold text-xl">AI Club</span>
+              <SiteLogo className="h-10 w-10" />
+              <span className="font-bold text-xl">KOU AI</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Yapay zeka tutkunlarinin bulusma noktasi. Birlikte ogreniyoruz, birlikte gelistiriyoruz.
@@ -74,7 +73,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                info@aiclub.edu.tr
+                info@kouai.edu.tr
               </li>
             </ul>
             <div className="flex gap-3 mt-4">
@@ -96,7 +95,7 @@ export function Footer() {
 
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            2026 AI Club. Tum haklar saklidir.
+            2026 KOU AI. Tum haklar saklidir.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <Link href="/admin" className="hover:text-primary transition-colors">

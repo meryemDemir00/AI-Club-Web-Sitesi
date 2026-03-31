@@ -6,7 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Brain, Lock, LogIn } from 'lucide-react'
+import { SiteLogo } from '@/components/site-logo'
+import { Lock, LogIn } from 'lucide-react'
 
 export default function AdminLoginPage() {
   const [username, setUsername] = useState('')
@@ -43,9 +44,7 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Card className="w-full max-w-md bg-card border-border">
         <CardHeader className="text-center">
-          <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center">
-            <Brain className="w-8 h-8 text-primary" />
-          </div>
+          <SiteLogo className="h-16 w-16 mx-auto mb-4 rounded-2xl" priority />
           <CardTitle className="text-2xl">Admin Paneli</CardTitle>
           <CardDescription>
             Yonetim paneline erisim icin giris yapin
@@ -97,7 +96,7 @@ export default function AdminLoginPage() {
           <div className="mt-6 p-4 rounded-lg bg-secondary/50 border border-border">
             <p className="text-xs text-muted-foreground text-center">
               <strong>Demo Bilgileri:</strong><br />
-              Kullanici: admin | Sifre: aiclub2026
+              Kullanici: admin | Sifre: kouai2026
             </p>
           </div>
         </CardContent>

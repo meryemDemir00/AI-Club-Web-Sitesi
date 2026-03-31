@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Navbar } from '@/components/navbar'
+import { useEffect, useState } from 'react'
 import { Footer } from '@/components/footer'
-import { Github, Linkedin, User } from 'lucide-react'
+import { Navbar } from '@/components/navbar'
 import type { TeamMember } from '@/lib/data'
+import { Github, Linkedin, User } from 'lucide-react'
 
 export default function TeamPage() {
   const [team, setTeam] = useState<TeamMember[]>([])
@@ -12,8 +12,8 @@ export default function TeamPage() {
 
   useEffect(() => {
     fetch('/api/team')
-      .then(r => r.json())
-      .then(data => setTeam(data))
+      .then((r) => r.json())
+      .then((data) => setTeam(data))
       .catch(console.error)
       .finally(() => setIsLoading(false))
   }, [])
@@ -22,29 +22,35 @@ export default function TeamPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero */}
-      <section className="pt-32 pb-16">
+      <section className="relative overflow-hidden pt-32 pb-16">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-[120%] rounded-full bg-primary/10 blur-3xl" />
+          <div className="absolute right-1/2 top-8 h-80 w-80 translate-x-[130%] rounded-full bg-accent/10 blur-3xl" />
+        </div>
+
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Ekibimiz</h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Koyuya Yapay Zeka&apos;yı yöneten ve etkinlikleri organize eden tutkulu ekibimizle tanışın.
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-5 inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-sm font-medium text-primary">
+              KOU AI yonetim ekibi
+            </div>
+            <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-6xl">Ekibimiz</h1>
+            <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
+              KOU AI&apos;yi yoneten ve etkinlikleri organize eden tutkulu ekibimizle tanisin.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Team Grid */}
       <section className="py-8 pb-24">
         <div className="container mx-auto px-4">
           {isLoading ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="mx-auto grid max-w-7xl justify-items-center gap-6 md:grid-cols-2 lg:grid-cols-3">
               {[...Array(6)].map((_, i) => (
-                <div key={i} className="h-52 rounded-2xl bg-card border border-border animate-pulse" />
+                <div key={i} className="h-[24.5rem] w-full max-w-[21.75rem] rounded-3xl border border-border bg-card animate-pulse" />
               ))}
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="mx-auto grid max-w-7xl justify-items-center gap-6 md:grid-cols-2 lg:grid-cols-3">
               {team.map((member) => (
                 <TeamCard key={member.id} member={member} />
               ))}
@@ -53,19 +59,18 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 border-t border-border bg-card/50">
+      <section className="border-t border-border bg-card/50 py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-4">Ekibimize Katılmak İster Misiniz?</h2>
-            <p className="text-muted-foreground mb-6">
-              Yönetim kadrosunda yer almak ve kulübümüzün gelişimine katkı sağlamak istiyorsanız başvurabilirsiniz.
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="mb-4 text-2xl font-bold">Ekibimize Katilmak Ister Misiniz?</h2>
+            <p className="mb-6 text-muted-foreground">
+              Yonetim kadrosunda yer almak ve kulubumuzun gelisimine katkı saglamak istiyorsaniz basvurabilirsiniz.
             </p>
             <a
               href="/uyelik"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >
-              Başvuru Yap
+              Basvuru Yap
             </a>
           </div>
         </div>
@@ -78,56 +83,47 @@ export default function TeamPage() {
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
-    <div className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/40">
-      {/* Glow effect */}
-      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 0%, hsl(var(--primary) / 0.15) 0%, transparent 70%)',
-          boxShadow: 'inset 0 1px 0 hsl(var(--primary) / 0.3)'
-        }}
-      />
-
-      <div className="relative p-6">
-        {/* Avatar */}
-        <div className="flex items-center gap-4 mb-4">
-          <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
-            {member.image ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-            ) : (
-              <User className="w-8 h-8 text-primary" />
-            )}
-            {/* Ring glow on avatar */}
-            <div className="absolute inset-0 rounded-xl ring-2 ring-primary/0 group-hover:ring-primary/40 transition-all duration-300" />
+    <article className="group w-full max-w-[21.75rem] overflow-hidden rounded-[1.75rem] border border-border/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
+      <div className="relative aspect-[5/4] max-h-[18rem] overflow-hidden border-b border-border/60 bg-[linear-gradient(135deg,rgba(139,92,246,0.16),rgba(236,72,153,0.12))]">
+        {member.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={member.image}
+            alt={member.name}
+            className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(135deg,#dbeafe,#f5d0fe)]">
+            <User className="h-20 w-20 text-primary/80" />
           </div>
+        )}
+      </div>
 
-          <div className="flex-1 min-w-0">
-            <h3 className="font-bold text-lg leading-tight truncate group-hover:text-primary transition-colors duration-200">
-              {member.name}
-            </h3>
-            <p className="text-primary text-sm font-medium">{member.role}</p>
-            <p className="text-muted-foreground text-xs mt-0.5 truncate">{member.department}</p>
-          </div>
+      <div className="space-y-3.5 p-5">
+        <div>
+          <h3 className="text-[1.45rem] font-bold leading-tight text-foreground">{member.name}</h3>
+          <p className="mt-1 text-[0.95rem] font-medium text-primary">{member.role}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{member.department}</p>
         </div>
 
-        {/* Bio */}
-        {member.bio && (
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">
-            {member.bio}
+        {member.bio ? (
+          <p className="min-h-[3.75rem] text-sm leading-6 text-muted-foreground">{member.bio}</p>
+        ) : (
+          <p className="min-h-[3.75rem] text-sm leading-6 text-muted-foreground">
+            KOU AI toplulugunun gelisimi icin aktif katkı sunuyor.
           </p>
         )}
 
-        {/* Social Links */}
-        <div className="flex gap-2 pt-3 border-t border-border">
+        <div className="flex items-center gap-3 pt-1">
           {member.linkedin && (
             <a
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary/20 hover:text-primary transition-all duration-200"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-all duration-200 hover:bg-primary/15 hover:text-primary"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-4 h-4" />
+              <Linkedin className="h-4.5 w-4.5" />
             </a>
           )}
           {member.github && (
@@ -135,14 +131,14 @@ function TeamCard({ member }: { member: TeamMember }) {
               href={member.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary/20 hover:text-primary transition-all duration-200"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-all duration-200 hover:bg-primary/15 hover:text-primary"
               aria-label="GitHub"
             >
-              <Github className="w-4 h-4" />
+              <Github className="h-4.5 w-4.5" />
             </a>
           )}
         </div>
       </div>
-    </div>
+    </article>
   )
 }

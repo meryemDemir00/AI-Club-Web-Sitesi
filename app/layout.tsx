@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'AI Club - Yapay Zeka Kulubu',
+  title: 'KOU AI - Yapay Zeka Kulubu',
   description: 'Yapay zeka tutkunlarinin bulusma noktasi. Etkinlikler, projeler ve egitimlerle gelecegi birlikte sekillendiriyoruz.',
   keywords: ['yapay zeka', 'AI', 'makine ogrenimi', 'deep learning', 'kulup'],
 }

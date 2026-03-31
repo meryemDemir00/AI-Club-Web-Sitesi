@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getEvents, addEvent } from '@/lib/data'
+import { addEvent, getEvents, reorderEvents } from '@/lib/data'
 
 export async function GET() {
   try {
@@ -13,7 +13,7 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { title, description, date, time, location, mapQuery, type, capacity, unlimitedCapacity, isActive } = body
+    const { title, description, image, instagram, date, time, location, mapQuery, type, capacity, unlimitedCapacity, isActive } = body
 
     if (!title || !description || !date || !time || !location || !type) {
       return NextResponse.json({ error: 'Zorunlu alanlar eksik' }, { status: 400 })
@@ -31,6 +31,8 @@ export async function POST(request: Request) {
     const newEvent = addEvent({
       title,
       description,
+      image: image || '',
+      instagram: instagram || '',
       date,
       time,
       location,
@@ -44,5 +46,21 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true, event: newEvent })
   } catch {
     return NextResponse.json({ error: 'Etkinlik eklenemedi' }, { status: 500 })
+  }
+}
+
+export async function PATCH(request: Request) {
+  try {
+    const body = await request.json()
+    const orderIds = Array.isArray(body.orderIds) ? body.orderIds : []
+
+    if (!orderIds.length) {
+      return NextResponse.json({ error: 'Yeni sira bilgisi zorunludur' }, { status: 400 })
+    }
+
+    const reorderedEvents = reorderEvents(orderIds)
+    return NextResponse.json({ success: true, events: reorderedEvents })
+  } catch {
+    return NextResponse.json({ error: 'Etkinlik sirasi guncellenemedi' }, { status: 500 })
   }
 }
