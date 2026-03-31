@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { updateTeamMember, deleteTeamMember } from '@/lib/data'
+import { updateTeamMember, deleteTeamMember } from '@/lib/mysql-store'
 
 export async function PUT(
   request: Request,
@@ -8,7 +8,7 @@ export async function PUT(
   try {
     const { id } = await params
     const body = await request.json()
-    const updated = updateTeamMember(id, body)
+    const updated = await updateTeamMember(id, body)
 
     if (!updated) {
       return NextResponse.json({ error: 'Ekip üyesi bulunamadı' }, { status: 404 })
@@ -26,7 +26,7 @@ export async function DELETE(
 ) {
   try {
     const { id } = await params
-    const deleted = deleteTeamMember(id)
+    const deleted = await deleteTeamMember(id)
 
     if (!deleted) {
       return NextResponse.json({ error: 'Ekip üyesi bulunamadı' }, { status: 404 })

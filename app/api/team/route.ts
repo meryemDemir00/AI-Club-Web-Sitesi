@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server'
-import { getTeamMembers, addTeamMember } from '@/lib/data'
+import { getTeamMembers, addTeamMember } from '@/lib/mysql-store'
 
 export async function GET() {
   try {
-    const team = getTeamMembers()
+    const team = await getTeamMembers()
     return NextResponse.json(team)
   } catch {
     return NextResponse.json({ error: 'Ekip alınamadı' }, { status: 500 })
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Ad, rol ve bölüm zorunludur' }, { status: 400 })
     }
 
-    const newMember = addTeamMember({
+    const newMember = await addTeamMember({
       name,
       role,
       department,

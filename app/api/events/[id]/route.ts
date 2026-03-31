@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { updateEvent, deleteEvent, toggleEventActive } from '@/lib/data'
+import { updateEvent, deleteEvent, toggleEventActive } from '@/lib/mysql-store'
 
 export async function PUT(
   request: Request,
@@ -11,7 +11,7 @@ export async function PUT(
 
     // Handle toggle active
     if (body.action === 'toggle') {
-      const event = toggleEventActive(id)
+      const event = await toggleEventActive(id)
       if (!event) {
         return NextResponse.json({ error: 'Etkinlik bulunamadı' }, { status: 404 })
       }
@@ -24,7 +24,7 @@ export async function PUT(
       body.capacity = parseInt(body.capacity)
     }
 
-    const updated = updateEvent(id, body)
+    const updated = await updateEvent(id, body)
     if (!updated) {
       return NextResponse.json({ error: 'Etkinlik bulunamadı' }, { status: 404 })
     }
@@ -41,7 +41,7 @@ export async function DELETE(
 ) {
   try {
     const { id } = await params
-    const deleted = deleteEvent(id)
+    const deleted = await deleteEvent(id)
 
     if (!deleted) {
       return NextResponse.json({ error: 'Etkinlik bulunamadı' }, { status: 404 })

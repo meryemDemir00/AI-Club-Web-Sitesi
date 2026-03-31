@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server'
-import { addMember, getMembers, updateMemberStatus, deleteMember } from '@/lib/data'
+import { addMember, getMembers, updateMemberStatus, deleteMember } from '@/lib/mysql-store'
 import { appendApplicationToExcel } from '@/lib/excel'
 
 export async function GET() {
   try {
-    const members = getMembers()
+    const members = await getMembers()
     return NextResponse.json(members)
   } catch {
     return NextResponse.json({ error: 'Üyeler alınamadı' }, { status: 500 })
@@ -20,9 +20,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Zorunlu alanlar eksik' }, { status: 400 })
     }
 
-    const newMember = addMember({ firstName, lastName, email, phone: phone || '', team })
+    const newMember = await addMember({ firstName, lastName, email, phone: phone || '', team })
 
-    // Append to Excel
+    // Excel export is optional; database is the source of truth.
     const excelSuccess = await appendApplicationToExcel({
       Ad: firstName,
       Soyad: lastName,
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 
     if (!excelSuccess) {
       // Excel'e kaydedilemezse, memory'den de sil ki tutarsızlık olmasın
-      deleteMember(newMember.id)
+      await deleteMember(newMember.id)
       return NextResponse.json(
         { error: 'Başvuru dosyaya kaydedilemedi: Dosya (Excel) şu an açık olabilir. Lütfen daha sonra tekrar deneyin.' },
         { status: 500 }
@@ -56,7 +56,7 @@ export async function PATCH(request: Request) {
       return NextResponse.json({ error: 'ID ve status zorunlu' }, { status: 400 })
     }
 
-    const member = updateMemberStatus(id, status)
+    const member = await updateMemberStatus(id, status)
     if (!member) {
       return NextResponse.json({ error: 'Üye bulunamadı' }, { status: 404 })
     }
@@ -76,7 +76,7 @@ export async function DELETE(request: Request) {
       return NextResponse.json({ error: 'ID zorunlu' }, { status: 400 })
     }
 
-    const deleted = deleteMember(id)
+    const deleted = await deleteMember(id)
     if (!deleted) {
       return NextResponse.json({ error: 'Üye bulunamadı' }, { status: 404 })
     }

@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server'
-import { getEvents, addEvent } from '@/lib/data'
+import { getEvents, addEvent } from '@/lib/mysql-store'
 
 export async function GET() {
   try {
-    const events = getEvents()
+    const events = await getEvents()
     return NextResponse.json(events)
   } catch {
     return NextResponse.json({ error: 'Etkinlikler alınamadı' }, { status: 500 })
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Geçersiz etkinlik türü' }, { status: 400 })
     }
 
-    const newEvent = addEvent({
+    const newEvent = await addEvent({
       title,
       description,
       date,

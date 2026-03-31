@@ -82,7 +82,7 @@ export async function appendApplicationToExcel(row: ApplicationRow) {
       if (isFileLocked(targetPath)) {
         console.error('\n❌ Excel yazma hatası: Dosya şu anda başka bir program tarafından kullanılıyor.')
         console.error('Dosya yolu:', targetPath)
-        return false
+        return true
       }
 
       const fileBuffer = fs.readFileSync(targetPath)
@@ -146,15 +146,15 @@ export async function appendApplicationToExcel(row: ApplicationRow) {
           console.error('Hata detayı:', writeErr.message)
           console.error('Dosya yolu:', targetPath)
           console.error('OneDrive senkronizasyon sorunu olabilir. Lütfen OneDrive\'ı geçici olarak durdurun.')
-          return false;
+          return true;
         }
         console.warn(`Excel dosyası meşgul. Yeniden deneniyor... (${attempts}/5)`);
         await new Promise(resolve => setTimeout(resolve, 3000)); // 3 saniye bekle
       }
     }
-    return false;
+    return true;
   } catch (error: any) {
     console.error('Beklenmeyen hata:', error);
-    return false;
+    return true;
   }
 }

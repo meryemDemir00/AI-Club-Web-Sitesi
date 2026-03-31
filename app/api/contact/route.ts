@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { addMessage } from '@/lib/data'
+import { addMessage } from '@/lib/mysql-store'
 import { sendContactEmail } from '@/lib/email'
 
 export async function POST(request: Request) {
@@ -11,7 +11,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Ad, e-posta ve mesaj zorunludur' }, { status: 400 })
     }
 
-    const newMessage = addMessage({
+    const newMessage = await addMessage({
       name,
       email,
       subject: subject || 'Genel',

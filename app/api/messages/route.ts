@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server'
-import { getMessages, markMessageAsRead, deleteMessage } from '@/lib/data'
+import { getMessages, markMessageAsRead, deleteMessage } from '@/lib/mysql-store'
 
 export async function GET() {
   try {
-    const messages = getMessages()
+    const messages = await getMessages()
     return NextResponse.json(messages)
   } catch {
     return NextResponse.json(
@@ -25,7 +25,7 @@ export async function PATCH(request: Request) {
       )
     }
 
-    const success = markMessageAsRead(id)
+    const success = await markMessageAsRead(id)
     
     if (!success) {
       return NextResponse.json(
@@ -55,7 +55,7 @@ export async function DELETE(request: Request) {
       )
     }
 
-    const deleted = deleteMessage(id)
+    const deleted = await deleteMessage(id)
     
     if (!deleted) {
       return NextResponse.json(
