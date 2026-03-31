@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import { validateAdmin } from '@/lib/data'
+import { validateAdmin } from '@/lib/mysql-store'
 
 export async function POST(request: Request) {
   try {
@@ -14,7 +14,7 @@ export async function POST(request: Request) {
       )
     }
 
-    const isValid = validateAdmin(username, password)
+    const isValid = await validateAdmin(username, password)
 
     if (!isValid) {
       return NextResponse.json(

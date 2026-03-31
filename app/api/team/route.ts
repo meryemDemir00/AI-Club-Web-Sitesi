@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server'
-import { addTeamMember, getTeamMembers, reorderTeamMembers } from '@/lib/data'
+import { addTeamMember, getTeamMembers, reorderTeamMembers } from '@/lib/mysql-store'
 
 export async function GET() {
   try {
-    const team = getTeamMembers()
+    const team = await getTeamMembers()
     return NextResponse.json(team)
   } catch {
     return NextResponse.json({ error: 'Ekip alınamadı' }, { status: 500 })
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Ad, rol ve bölüm zorunludur' }, { status: 400 })
     }
 
-    const newMember = addTeamMember({
+    const newMember = await addTeamMember({
       name,
       role,
       department,
@@ -44,7 +44,7 @@ export async function PATCH(request: Request) {
       return NextResponse.json({ error: 'Yeni sira bilgisi zorunludur' }, { status: 400 })
     }
 
-    const reorderedMembers = reorderTeamMembers(orderIds)
+    const reorderedMembers = await reorderTeamMembers(orderIds)
     return NextResponse.json({ success: true, members: reorderedMembers })
   } catch {
     return NextResponse.json({ error: 'Ekip sirasi guncellenemedi' }, { status: 500 })

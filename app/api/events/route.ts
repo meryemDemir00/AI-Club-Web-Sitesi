@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server'
-import { addEvent, getEvents, reorderEvents } from '@/lib/data'
+import { addEvent, getEvents, reorderEvents } from '@/lib/mysql-store'
 
 export async function GET() {
   try {
-    const events = getEvents()
+    const events = await getEvents()
     return NextResponse.json(events)
   } catch {
     return NextResponse.json({ error: 'Etkinlikler alınamadı' }, { status: 500 })
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Geçersiz etkinlik türü' }, { status: 400 })
     }
 
-    const newEvent = addEvent({
+    const newEvent = await addEvent({
       title,
       description,
       image: image || '',
@@ -58,7 +58,7 @@ export async function PATCH(request: Request) {
       return NextResponse.json({ error: 'Yeni sira bilgisi zorunludur' }, { status: 400 })
     }
 
-    const reorderedEvents = reorderEvents(orderIds)
+    const reorderedEvents = await reorderEvents(orderIds)
     return NextResponse.json({ success: true, events: reorderedEvents })
   } catch {
     return NextResponse.json({ error: 'Etkinlik sirasi guncellenemedi' }, { status: 500 })
