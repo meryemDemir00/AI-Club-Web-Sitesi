@@ -32,6 +32,8 @@ const eventTypeConfig = {
   meetup: { label: 'Bulusma', icon: Coffee, color: 'bg-green-500/10 text-green-400 border-green-500/20' },
 }
 
+type EventType = keyof typeof eventTypeConfig
+
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('tr-TR', {
     day: 'numeric',
@@ -285,6 +287,7 @@ export default function EventsPage() {
   const [events, setEvents] = useState<Event[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
+  const [selectedType, setSelectedType] = useState<EventType | null>(null)
 
   useEffect(() => {
     fetch('/api/events')
@@ -294,11 +297,15 @@ export default function EventsPage() {
       .finally(() => setIsLoading(false))
   }, [])
 
-  const activeEvents = events
+  const filteredEvents = selectedType
+    ? events.filter(event => event.type === selectedType)
+    : events
+
+  const activeEvents = filteredEvents
     .filter(e => e.isActive !== false)
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
-  const completedEvents = events
+  const completedEvents = filteredEvents
     .filter(e => e.isActive === false)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
@@ -322,11 +329,24 @@ export default function EventsPage() {
           <div className="flex flex-wrap justify-center gap-3">
             {Object.entries(eventTypeConfig).map(([key, config]) => {
               const Icon = config.icon
+              const isSelected = selectedType === key
+
               return (
-                <div key={key} className={`flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-medium ${config.color}`}>
+                <Button
+                  key={key}
+                  type="button"
+                  variant={isSelected ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setSelectedType(isSelected ? null : (key as EventType))}
+                  className={`rounded-full gap-2 border transition-all duration-200 ${
+                    isSelected
+                      ? `${config.color} shadow-sm`
+                      : 'bg-background/70 hover:bg-accent'
+                  }`}
+                >
                   <Icon className="w-3.5 h-3.5" />
                   {config.label}
-                </div>
+                </Button>
               )
             })}
           </div>
@@ -352,8 +372,14 @@ export default function EventsPage() {
           ) : (
             <div className="text-center py-16 bg-card rounded-2xl border border-border">
               <Calendar className="w-12 h-12 mx-auto text-muted-foreground mb-4" />
-              <h3 className="font-semibold mb-2">Aktif etkinlik bulunmuyor</h3>
-              <p className="text-muted-foreground text-sm">Yeni etkinlikler icin bizi takip etmeye devam edin.</p>
+              <h3 className="font-semibold mb-2">
+                {selectedType ? 'Bu kategoride aktif etkinlik bulunmuyor' : 'Aktif etkinlik bulunmuyor'}
+              </h3>
+              <p className="text-muted-foreground text-sm">
+                {selectedType
+                  ? 'Farkli bir filtre secerek diger etkinlikleri goruntuleyebilirsiniz.'
+                  : 'Yeni etkinlikler icin bizi takip etmeye devam edin.'}
+              </p>
             </div>
           )}
         </div>
