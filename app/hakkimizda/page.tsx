@@ -54,7 +54,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Hakkimizda</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              AI Club, yapay zeka tutkusunu paylasan ogrencileri bir araya getiren, 
+              KOU AI, yapay zeka tutkusunu paylasan ogrencileri bir araya getiren, 
               ogrenme ve gelistirme odakli bir topluluktur.
             </p>
           </div>

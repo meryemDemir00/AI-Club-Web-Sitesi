@@ -1,3 +1,6 @@
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
+import path from 'path';
+
 // In-memory data store (since no database integration)
 // In production, this would be replaced with a proper database
 
@@ -17,6 +20,8 @@ export interface Event {
   id: string;
   title: string;
   description: string;
+  image: string;
+  instagram: string;
   date: string;
   time: string;
   location: string;
@@ -115,6 +120,8 @@ const initialEvents: Event[] = [
   {
     id: '1',
     title: 'ChatGPT ve Prompt Muhendisligi',
+    image: '',
+    instagram: '',
     description: 'Büyük dil modellerini etkili kullanma teknikleri ve prompt mühendisliği eğitimi. Bu workshopta katılımcılar ChatGPT ve diğer büyük dil modellerini profesyonel düzeyde kullanmayı öğrenecekler.',
     date: '2026-04-15',
     time: '14:00',
@@ -129,6 +136,8 @@ const initialEvents: Event[] = [
   {
     id: '2',
     title: 'AI Hackathon 2026',
+    image: '',
+    instagram: '',
     description: '24 saatlik yapay zeka hackathonu. Takım oluşturun ve yaratıcı çözümler geliştirin! Kazananlara ödüller ve staj fırsatları bekliyor.',
     date: '2026-05-01',
     time: '09:00',
@@ -143,6 +152,8 @@ const initialEvents: Event[] = [
   {
     id: '3',
     title: 'Yapay Zeka Etigi Semineri',
+    image: '',
+    instagram: '',
     description: 'AI sistemlerinde etik sorunlar ve sorumlu yapay zeka geliştirme üzerine kapsamlı bir seminer. Sektör uzmanları ile soru-cevap oturumu da yapılacak.',
     date: '2026-04-22',
     time: '15:30',
@@ -157,6 +168,8 @@ const initialEvents: Event[] = [
   {
     id: '4',
     title: 'PyTorch ile Deep Learning',
+    image: '',
+    instagram: '',
     description: 'Sıfırdan PyTorch öğrenin ve ilk sinir ağınızı oluşturun. Bilgisayarlı görü ve doğal dil işleme örnekleriyle uygulamalı eğitim.',
     date: '2026-04-28',
     time: '13:00',
@@ -171,6 +184,8 @@ const initialEvents: Event[] = [
   {
     id: '5',
     title: 'AI Sohbet Bulusmasi',
+    image: '',
+    instagram: '',
     description: 'Rahat bir ortamda yapay zeka hakkında sohbet ve networking. Alandaki gelişmeleri tartışıyoruz, yeni insanlarla tanışıyoruz.',
     date: '2026-04-10',
     time: '18:00',
@@ -191,16 +206,107 @@ type DataStore = {
   messages: ContactMessage[];
 }
 
-const globalStore = globalThis as typeof globalThis & { __aiClubDataStore?: DataStore };
+const TEAM_MEMBERS_FILE = path.join(process.cwd(), 'data', 'team-members.json');
+const EVENTS_FILE = path.join(process.cwd(), 'data', 'events.json');
 
-const store: DataStore = globalStore.__aiClubDataStore ?? {
-  teamMembers: initialTeamMembers,
-  events: initialEvents,
+function normalizeTeamMember(member: Partial<TeamMember>, fallbackId: string): TeamMember {
+  return {
+    id: member.id || fallbackId,
+    name: member.name || '',
+    role: member.role || '',
+    department: member.department || '',
+    bio: member.bio || '',
+    image: member.image || '',
+    linkedin: member.linkedin || '',
+    github: member.github || ''
+  };
+}
+
+function loadTeamMembers(): TeamMember[] {
+  try {
+    if (!existsSync(TEAM_MEMBERS_FILE)) {
+      return initialTeamMembers;
+    }
+
+    const raw = readFileSync(TEAM_MEMBERS_FILE, 'utf8');
+    const parsed = JSON.parse(raw);
+
+    if (Array.isArray(parsed)) {
+      return parsed.map((member, index) => normalizeTeamMember(member, `${index + 1}`));
+    }
+  } catch (error) {
+    console.error('Team members could not be loaded from disk.', error);
+  }
+
+  return initialTeamMembers;
+}
+
+function persistTeamMembers(nextTeamMembers: TeamMember[]) {
+  try {
+    mkdirSync(path.dirname(TEAM_MEMBERS_FILE), { recursive: true });
+    writeFileSync(TEAM_MEMBERS_FILE, JSON.stringify(nextTeamMembers, null, 2), 'utf8');
+  } catch (error) {
+    console.error('Team members could not be saved to disk.', error);
+  }
+}
+
+function normalizeEvent(event: Partial<Event>, fallbackId: string): Event {
+  return {
+    id: event.id || fallbackId,
+    title: event.title || '',
+    description: event.description || '',
+    image: event.image || '',
+    instagram: event.instagram || '',
+    date: event.date || '',
+    time: event.time || '',
+    location: event.location || '',
+    mapQuery: event.mapQuery || '',
+    type: event.type || 'workshop',
+    capacity: typeof event.capacity === 'number' ? event.capacity : 0,
+    unlimitedCapacity: event.unlimitedCapacity === true,
+    registered: typeof event.registered === 'number' ? event.registered : 0,
+    isActive: event.isActive !== false
+  };
+}
+
+function loadEvents(): Event[] {
+  try {
+    if (!existsSync(EVENTS_FILE)) {
+      return initialEvents;
+    }
+
+    const raw = readFileSync(EVENTS_FILE, 'utf8');
+    const parsed = JSON.parse(raw);
+
+    if (Array.isArray(parsed)) {
+      return parsed.map((event, index) => normalizeEvent(event, `${index + 1}`));
+    }
+  } catch (error) {
+    console.error('Events could not be loaded from disk.', error);
+  }
+
+  return initialEvents;
+}
+
+function persistEvents(nextEvents: Event[]) {
+  try {
+    mkdirSync(path.dirname(EVENTS_FILE), { recursive: true });
+    writeFileSync(EVENTS_FILE, JSON.stringify(nextEvents, null, 2), 'utf8');
+  } catch (error) {
+    console.error('Events could not be saved to disk.', error);
+  }
+}
+
+const globalStore = globalThis as typeof globalThis & { __kouAiDataStore?: DataStore };
+
+const store: DataStore = globalStore.__kouAiDataStore ?? {
+  teamMembers: loadTeamMembers(),
+  events: loadEvents(),
   members: [],
   messages: []
 };
 
-globalStore.__aiClubDataStore = store;
+globalStore.__kouAiDataStore = store;
 
 // ─── In-memory runtime data ───────────────────────────────────────────────────
 let teamMembers = store.teamMembers;
@@ -295,6 +401,7 @@ export function addEvent(event: Omit<Event, 'id' | 'registered'>): Event {
     registered: 0
   };
   events.push(newEvent);
+  persistEvents(events);
   return newEvent;
 }
 
@@ -302,6 +409,7 @@ export function updateEvent(id: string, updates: Partial<Omit<Event, 'id'>>): Ev
   const event = events.find(e => e.id === id);
   if (event) {
     Object.assign(event, updates);
+    persistEvents(events);
     return event;
   }
   return null;
@@ -311,6 +419,7 @@ export function deleteEvent(id: string): boolean {
   const index = events.findIndex(e => e.id === id);
   if (index !== -1) {
     events.splice(index, 1);
+    persistEvents(events);
     return true;
   }
   return false;
@@ -320,9 +429,24 @@ export function toggleEventActive(id: string): Event | null {
   const event = events.find(e => e.id === id);
   if (event) {
     event.isActive = !event.isActive;
+    persistEvents(events);
     return event;
   }
   return null;
+}
+
+export function reorderEvents(orderIds: string[]): Event[] {
+  const eventMap = new Map(events.map((event) => [event.id, event]));
+  const orderedEvents = orderIds
+    .map((id) => eventMap.get(id))
+    .filter((event): event is Event => Boolean(event));
+  const remainingEvents = events.filter((event) => !orderIds.includes(event.id));
+
+  events = [...orderedEvents, ...remainingEvents];
+  store.events = events;
+  persistEvents(events);
+
+  return events;
 }
 
 // ─── Team Member functions ────────────────────────────────────────────────────
@@ -336,6 +460,7 @@ export function addTeamMember(member: Omit<TeamMember, 'id'>): TeamMember {
     id: Date.now().toString()
   };
   teamMembers.push(newMember);
+  persistTeamMembers(teamMembers);
   return newMember;
 }
 
@@ -343,6 +468,7 @@ export function updateTeamMember(id: string, updates: Partial<Omit<TeamMember, '
   const member = teamMembers.find(m => m.id === id);
   if (member) {
     Object.assign(member, updates);
+    persistTeamMembers(teamMembers);
     return member;
   }
   return null;
@@ -352,15 +478,30 @@ export function deleteTeamMember(id: string): boolean {
   const index = teamMembers.findIndex(m => m.id === id);
   if (index !== -1) {
     teamMembers.splice(index, 1);
+    persistTeamMembers(teamMembers);
     return true;
   }
   return false;
 }
 
+export function reorderTeamMembers(orderIds: string[]): TeamMember[] {
+  const teamMemberMap = new Map(teamMembers.map((member) => [member.id, member]));
+  const orderedMembers = orderIds
+    .map((id) => teamMemberMap.get(id))
+    .filter((member): member is TeamMember => Boolean(member));
+  const remainingMembers = teamMembers.filter((member) => !orderIds.includes(member.id));
+
+  teamMembers = [...orderedMembers, ...remainingMembers];
+  store.teamMembers = teamMembers;
+  persistTeamMembers(teamMembers);
+
+  return teamMembers;
+}
+
 // ─── Admin auth ───────────────────────────────────────────────────────────────
 const ADMIN_CREDENTIALS = {
   username: 'admin',
-  password: 'aiclub2026'
+  password: 'kouai2026'
 };
 
 export function validateAdmin(username: string, password: string): boolean {

@@ -3,9 +3,10 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import { SiteLogo } from '@/components/site-logo'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { Brain, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { href: '/', label: 'Ana Sayfa' },
@@ -22,11 +23,12 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-            <Brain className="w-6 h-6 text-primary" />
-          </div>
-          <span className="font-bold text-xl tracking-tight">AI Club</span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <SiteLogo
+            className="h-10 w-10 transition-transform duration-200 group-hover:scale-105"
+            priority
+          />
+          <span className="font-bold text-xl tracking-tight">KOU AI</span>
         </Link>
 
         {/* Desktop Navigation */}

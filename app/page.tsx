@@ -73,7 +73,7 @@ export default function HomePage() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
-              AI Club olarak, yapay zeka tutkunlarini bir araya getiriyor, ogrenme ve gelistirme firsatlari sunuyoruz. Gelecegi birlikte sekillendiriyoruz.
+              KOU AI olarak, yapay zeka tutkunlarini bir araya getiriyor, ogrenme ve gelistirme firsatlari sunuyoruz. Gelecegi birlikte sekillendiriyoruz.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
