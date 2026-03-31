@@ -33,28 +33,28 @@ const eventTypeConfig = {
     icon: Code,
     chipClass: 'border-violet-500/30 bg-violet-500/10 text-violet-200',
     accentClass: 'from-violet-600/80 via-fuchsia-500/70 to-sky-500/70',
-    softClass: 'border-violet-500/20 bg-violet-500/10 text-violet-200',
+    softClass: 'border-violet-400/45 bg-violet-500/12 text-violet-700 hover:border-violet-500 hover:bg-violet-500/18',
   },
   seminar: {
     label: 'Seminer',
     icon: Presentation,
     chipClass: 'border-sky-500/30 bg-sky-500/10 text-sky-200',
     accentClass: 'from-sky-600/80 via-cyan-500/70 to-blue-500/70',
-    softClass: 'border-sky-500/20 bg-sky-500/10 text-sky-200',
+    softClass: 'border-sky-400/45 bg-sky-500/12 text-sky-700 hover:border-sky-500 hover:bg-sky-500/18',
   },
   hackathon: {
     label: 'Hackathon',
     icon: Trophy,
     chipClass: 'border-amber-500/30 bg-amber-500/10 text-amber-100',
     accentClass: 'from-amber-500/80 via-orange-500/70 to-rose-500/70',
-    softClass: 'border-amber-500/20 bg-amber-500/10 text-amber-100',
+    softClass: 'border-amber-400/50 bg-amber-500/12 text-amber-700 hover:border-amber-500 hover:bg-amber-500/18',
   },
   meetup: {
     label: 'Bulusma',
     icon: Coffee,
     chipClass: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-100',
     accentClass: 'from-emerald-600/80 via-teal-500/70 to-cyan-500/70',
-    softClass: 'border-emerald-500/20 bg-emerald-500/10 text-emerald-100',
+    softClass: 'border-emerald-400/45 bg-emerald-500/12 text-emerald-700 hover:border-emerald-500 hover:bg-emerald-500/18',
   },
 } as const
 
@@ -394,6 +394,7 @@ export default function EventsPage() {
   const [events, setEvents] = useState<Event[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
+  const [selectedFilter, setSelectedFilter] = useState<Event['type'] | 'all'>('all')
 
   useEffect(() => {
     fetch('/api/events')
@@ -403,8 +404,12 @@ export default function EventsPage() {
       .finally(() => setIsLoading(false))
   }, [])
 
-  const activeEvents = events.filter((event) => event.isActive !== false)
-  const completedEvents = events.filter((event) => event.isActive === false)
+  const filteredEvents = selectedFilter === 'all'
+    ? events
+    : events.filter((event) => event.type === selectedFilter)
+
+  const activeEvents = filteredEvents.filter((event) => event.isActive !== false)
+  const completedEvents = filteredEvents.filter((event) => event.isActive === false)
 
   return (
     <div className="min-h-screen bg-background">
@@ -426,13 +431,26 @@ export default function EventsPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => setSelectedFilter('all')}
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium backdrop-blur-sm transition-colors ${selectedFilter === 'all' ? 'border-primary bg-primary text-primary-foreground shadow-lg shadow-primary/20' : 'border-border bg-background/80 text-foreground hover:border-primary/30 hover:text-primary'}`}
+            >
+              Tumu
+            </button>
             {Object.entries(eventTypeConfig).map(([key, config]) => {
               const Icon = config.icon
+              const isSelected = selectedFilter === key
               return (
-                <div key={key} className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium backdrop-blur-sm ${config.softClass}`}>
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => setSelectedFilter((current) => current === key ? 'all' : key as Event['type'])}
+                  className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium backdrop-blur-sm transition-colors ${isSelected ? 'bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20' : config.softClass}`}
+                >
                   <Icon className="h-4 w-4" />
                   {config.label}
-                </div>
+                </button>
               )
             })}
           </div>
