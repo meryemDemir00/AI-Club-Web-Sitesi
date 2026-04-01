@@ -92,21 +92,35 @@ function getProgress(event: Event) {
   return Math.min((event.registered / event.capacity) * 100, 100)
 }
 
-function EventPoster({ event, className = '' }: { event: Event; className?: string }) {
+function EventPoster({
+  event,
+  className = '',
+  isCompleted = false,
+}: {
+  event: Event
+  className?: string
+  isCompleted?: boolean
+}) {
   const typeConfig = eventTypeConfig[event.type]
   const Icon = typeConfig.icon
 
   if (event.image) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
-      <img src={event.image} alt={event.title} className={`h-full w-full object-cover ${className}`} />
+      <img
+        src={event.image}
+        alt={event.title}
+        className={`h-full w-full object-cover ${isCompleted ? 'grayscale saturate-0' : ''} ${className}`}
+      />
     )
   }
 
   return (
-    <div className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${typeConfig.accentClass} ${className}`}>
-      <div className="rounded-3xl border border-white/15 bg-black/10 p-6 backdrop-blur-sm">
-        <Icon className="h-12 w-12 text-white" />
+    <div
+      className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${isCompleted ? 'from-slate-600/80 via-slate-500/70 to-zinc-500/70 grayscale' : typeConfig.accentClass} ${className}`}
+    >
+      <div className={`rounded-3xl border p-6 backdrop-blur-sm ${isCompleted ? 'border-white/10 bg-black/20' : 'border-white/15 bg-black/10'}`}>
+        <Icon className={`h-12 w-12 ${isCompleted ? 'text-white/80' : 'text-white'}`} />
       </div>
     </div>
   )
@@ -119,16 +133,16 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (event: Event)
   const progress = getProgress(event)
 
   return (
-    <article className={`group overflow-hidden rounded-[28px] border border-border bg-card shadow-sm transition-all duration-300 ${isCompleted ? 'opacity-70' : 'hover:-translate-y-1 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10'}`}>
+    <article className={`group overflow-hidden rounded-[28px] border shadow-sm transition-all duration-300 ${isCompleted ? 'border-slate-300/70 bg-slate-100/90 text-slate-700' : 'border-border bg-card hover:-translate-y-1 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10'}`}>
       <div className="relative h-64 overflow-hidden">
-        <EventPoster event={event} className="transition-transform duration-500 group-hover:scale-[1.03]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+        <EventPoster event={event} isCompleted={isCompleted} className="transition-transform duration-500 group-hover:scale-[1.03]" />
+        <div className={`absolute inset-0 bg-gradient-to-t ${isCompleted ? 'from-slate-900/85 via-slate-800/40 to-slate-200/10' : 'from-slate-950 via-slate-950/40 to-transparent'}`} />
 
         <div className="absolute left-4 top-4 flex items-center gap-2">
-          <div className={`flex h-11 w-11 items-center justify-center rounded-2xl border backdrop-blur-md ${typeConfig.chipClass}`}>
+          <div className={`flex h-11 w-11 items-center justify-center rounded-2xl border backdrop-blur-md ${isCompleted ? 'border-white/15 bg-black/35 text-white/80' : typeConfig.chipClass}`}>
             <Icon className="h-5 w-5" />
           </div>
-          <Badge variant="outline" className={`border backdrop-blur-md ${typeConfig.chipClass}`}>
+          <Badge variant="outline" className={`border backdrop-blur-md ${isCompleted ? 'border-white/15 bg-black/35 text-white/80' : typeConfig.chipClass}`}>
             {typeConfig.label}
           </Badge>
         </div>
@@ -140,41 +154,41 @@ function EventCard({ event, onDetail }: { event: Event; onDetail: (event: Event)
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-          <h3 className="text-2xl font-semibold leading-tight drop-shadow-sm">
+          <h3 className={`text-2xl font-semibold leading-tight drop-shadow-sm ${isCompleted ? 'text-white/90' : ''}`}>
             {event.title}
           </h3>
         </div>
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <p className="line-clamp-3 text-sm leading-6 text-muted-foreground">
+        <p className={`line-clamp-3 text-sm leading-6 ${isCompleted ? 'text-slate-600' : 'text-muted-foreground'}`}>
           {event.description}
         </p>
 
         <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
-          <div className="rounded-2xl border border-border bg-secondary/35 p-3">
-            <div className="mb-1 flex items-center gap-2 text-muted-foreground">
+          <div className={`rounded-2xl border p-3 ${isCompleted ? 'border-slate-300 bg-slate-200/70' : 'border-border bg-secondary/35'}`}>
+            <div className={`mb-1 flex items-center gap-2 ${isCompleted ? 'text-slate-500' : 'text-muted-foreground'}`}>
               <Calendar className="h-4 w-4" />
               <span className="text-xs uppercase tracking-[0.18em]">Tarih</span>
             </div>
             <p className="font-medium">{formatDate(event.date)}</p>
           </div>
-          <div className="rounded-2xl border border-border bg-secondary/35 p-3">
-            <div className="mb-1 flex items-center gap-2 text-muted-foreground">
+          <div className={`rounded-2xl border p-3 ${isCompleted ? 'border-slate-300 bg-slate-200/70' : 'border-border bg-secondary/35'}`}>
+            <div className={`mb-1 flex items-center gap-2 ${isCompleted ? 'text-slate-500' : 'text-muted-foreground'}`}>
               <Clock className="h-4 w-4" />
               <span className="text-xs uppercase tracking-[0.18em]">Saat</span>
             </div>
             <p className="font-medium">{event.time}</p>
           </div>
-          <div className="rounded-2xl border border-border bg-secondary/35 p-3">
-            <div className="mb-1 flex items-center gap-2 text-muted-foreground">
+          <div className={`rounded-2xl border p-3 ${isCompleted ? 'border-slate-300 bg-slate-200/70' : 'border-border bg-secondary/35'}`}>
+            <div className={`mb-1 flex items-center gap-2 ${isCompleted ? 'text-slate-500' : 'text-muted-foreground'}`}>
               <MapPin className="h-4 w-4" />
               <span className="text-xs uppercase tracking-[0.18em]">Konum</span>
             </div>
             <p className="line-clamp-2 font-medium">{event.location}</p>
           </div>
-          <div className="rounded-2xl border border-border bg-secondary/35 p-3">
-            <div className="mb-1 flex items-center gap-2 text-muted-foreground">
+          <div className={`rounded-2xl border p-3 ${isCompleted ? 'border-slate-300 bg-slate-200/70' : 'border-border bg-secondary/35'}`}>
+            <div className={`mb-1 flex items-center gap-2 ${isCompleted ? 'text-slate-500' : 'text-muted-foreground'}`}>
               <Users className="h-4 w-4" />
               <span className="text-xs uppercase tracking-[0.18em]">Katilim</span>
             </div>

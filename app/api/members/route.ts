@@ -2,6 +2,14 @@ import { NextResponse } from 'next/server'
 import { addMember, getMembers, updateMemberStatus, deleteMember } from '@/lib/mysql-store'
 import { appendApplicationToExcel } from '@/lib/excel'
 
+function normalizeEmail(email: string) {
+  return email.trim().toLowerCase()
+}
+
+function normalizePhone(phone: string) {
+  return phone.replace(/\D/g, '')
+}
+
 export async function GET() {
   try {
     const members = await getMembers()
@@ -20,7 +28,37 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Zorunlu alanlar eksik' }, { status: 400 })
     }
 
-    const newMember = await addMember({ firstName, lastName, email, phone: phone || '', team })
+    const normalizedEmail = normalizeEmail(email)
+    const normalizedPhone = normalizePhone(phone || '')
+    const members = await getMembers()
+
+    const emailExists = members.some((member) => normalizeEmail(member.email) === normalizedEmail)
+    const phoneExists = normalizedPhone
+      ? members.some((member) => normalizePhone(member.phone) === normalizedPhone)
+      : false
+
+    if (emailExists || phoneExists) {
+      const duplicateFields = [
+        emailExists ? 'e-posta adresi' : null,
+        phoneExists ? 'telefon numarası' : null,
+      ].filter(Boolean)
+
+      return NextResponse.json(
+        {
+          error: `Bu ${duplicateFields.join(' ve ')} ile daha önce kayıt oluşturulmuş.`,
+          duplicateFields,
+        },
+        { status: 409 },
+      )
+    }
+
+    const newMember = await addMember({
+      firstName,
+      lastName,
+      email: normalizedEmail,
+      phone: phone || '',
+      team,
+    })
 
     // Append to Excel
     const excelSuccess = await appendApplicationToExcel({

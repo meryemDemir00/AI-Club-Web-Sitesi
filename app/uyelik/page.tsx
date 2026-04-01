@@ -69,6 +69,13 @@ export default function ApplicationPage() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState('')
 
+  const updateFormData = (field: 'firstName' | 'lastName' | 'email' | 'phone' | 'team', value: string) => {
+    setFormData((current) => ({ ...current, [field]: value }))
+    if (error) {
+      setError('')
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
@@ -163,7 +170,7 @@ export default function ApplicationPage() {
                           <Input
                             id="firstName"
                             value={formData.firstName}
-                            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                            onChange={(e) => updateFormData('firstName', e.target.value)}
                             placeholder="Adınız"
                             required
                           />
@@ -173,7 +180,7 @@ export default function ApplicationPage() {
                           <Input
                             id="lastName"
                             value={formData.lastName}
-                            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                            onChange={(e) => updateFormData('lastName', e.target.value)}
                             placeholder="Soyadınız"
                             required
                           />
@@ -186,7 +193,7 @@ export default function ApplicationPage() {
                           id="email"
                           type="email"
                           value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          onChange={(e) => updateFormData('email', e.target.value)}
                           placeholder="ornek@email.com"
                           required
                         />
@@ -198,7 +205,7 @@ export default function ApplicationPage() {
                           id="phone"
                           type="tel"
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          onChange={(e) => updateFormData('phone', e.target.value)}
                           placeholder="0555 123 45 67"
                         />
                       </div>
@@ -223,7 +230,7 @@ export default function ApplicationPage() {
                             <button
                               type="button"
                               key={team.id}
-                              onClick={() => setFormData({ ...formData, team: team.id })}
+                              onClick={() => updateFormData('team', team.id)}
                               className={`p-4 rounded-xl border-2 text-left transition-all duration-200 group ${
                                 isSelected
                                   ? 'border-primary bg-primary/10 shadow-md shadow-primary/10'
