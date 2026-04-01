@@ -30,8 +30,8 @@ const values = [
   },
   {
     icon: Heart,
-    title: 'Kapsayicilik',
-    description: 'Her seviyeden ve her bolumden ogrenciyi kucakliyoruz.'
+    title: 'Teknik Ekip',
+    description: 'Her seviyeden ve her bolumden ekiplerimiz ile yarışmalara katılıyoruz .'
   }
 ]
 
