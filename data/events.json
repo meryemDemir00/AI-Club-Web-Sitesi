@@ -16,6 +16,22 @@
     "isActive": true
   },
   {
+    "id": "1",
+    "title": "ChatGPT ve Prompt Muhendisligi",
+    "description": "Büyük dil modellerini etkili kullanma teknikleri ve prompt mühendisliği eğitimi. Bu workshopta katılımcılar ChatGPT ve diğer büyük dil modellerini profesyonel düzeyde kullanmayı öğrenecekler.",
+    "image": "",
+    "instagram": "",
+    "date": "2026-04-15",
+    "time": "14:00",
+    "location": "Konferans Salonu A",
+    "mapQuery": "Konferans Salonu A, Istanbul",
+    "type": "workshop",
+    "capacity": 50,
+    "unlimitedCapacity": false,
+    "registered": 32,
+    "isActive": true
+  },
+  {
     "id": "4",
     "title": "PyTorch ile Deep Learning",
     "description": "Sıfırdan PyTorch öğrenin ve ilk sinir ağınızı oluşturun. Bilgisayarlı görü ve doğal dil işleme örnekleriyle uygulamalı eğitim.",
@@ -62,22 +78,6 @@
     "unlimitedCapacity": false,
     "registered": 145,
     "isActive": false
-  },
-  {
-    "id": "1",
-    "title": "ChatGPT ve Prompt Muhendisligi",
-    "description": "Büyük dil modellerini etkili kullanma teknikleri ve prompt mühendisliği eğitimi. Bu workshopta katılımcılar ChatGPT ve diğer büyük dil modellerini profesyonel düzeyde kullanmayı öğrenecekler.",
-    "image": "",
-    "instagram": "",
-    "date": "2026-04-15",
-    "time": "14:00",
-    "location": "Konferans Salonu A",
-    "mapQuery": "Konferans Salonu A, Istanbul",
-    "type": "workshop",
-    "capacity": 50,
-    "unlimitedCapacity": false,
-    "registered": 32,
-    "isActive": true
   },
   {
     "id": "5",

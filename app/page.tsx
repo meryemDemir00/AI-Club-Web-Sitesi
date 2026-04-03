@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
+import { HomeEventsSlider } from '@/components/home-events-slider'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { 
-  Brain, 
   Sparkles, 
   Users, 
   Calendar, 
@@ -12,9 +12,6 @@ import {
   Lightbulb, 
   Rocket, 
   ArrowRight,
-  Cpu,
-  Network,
-  Zap
 } from 'lucide-react'
 
 const features = [
@@ -133,63 +130,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* AI Topics Section */}
-      <section className="py-20 bg-card/50 border-y border-border">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Modern AI Teknolojileri
-              </h2>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Kulubumuzde guncel yapay zeka konularini inceliyor ve uygulamali projeler gelistiriyoruz. Baslangic seviyesinden ileri seviyeye kadar herkes icin icerik uretiyoruz.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <Brain className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Derin Ogrenme</h4>
-                    <p className="text-sm text-muted-foreground">CNN, RNN, Transformer mimarileri ve uygulamalari</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                    <Network className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Dogal Dil Isleme</h4>
-                    <p className="text-sm text-muted-foreground">LLM&apos;ler, chatbotlar ve metin analizi</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <Cpu className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Bilgisayarli Goru</h4>
-                    <p className="text-sm text-muted-foreground">Goruntu siniflandirma, nesne tespiti ve segmentasyon</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/5 border border-border flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-primary/20 flex items-center justify-center">
-                    <Zap className="w-12 h-12 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Hands-on Learning</h3>
-                  <p className="text-muted-foreground">Teoriden pratige, birlikte ogreniyoruz</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeEventsSlider />
 
       {/* CTA Section */}
       <section className="py-20">
