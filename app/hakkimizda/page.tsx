@@ -16,22 +16,22 @@ const values = [
   {
     icon: Users,
     title: 'Topluluk',
-    description: 'Birlikte ogrenmenin ve paylasmanin gucune inaniyoruz.'
+    description: 'Birlikte öğrenmenin, üretmenin ve dayanışma içinde büyümenin gücüne inanıyoruz.'
   },
   {
     icon: BookOpen,
-    title: 'Surekli Ogrenme',
-    description: 'Hizla gelisen AI dunyasinda kendimizi surekli guncelliyoruz.'
+    title: 'Sürekli Öğrenme',
+    description: 'Hızla gelişen yapay zekâ dünyasını yakından takip ediyor, kendimizi her gün daha ileri taşıyoruz.'
   },
   {
     icon: Lightbulb,
-    title: 'Inovasyon',
-    description: 'Yaratici fikirler ve yenilikci cozumler uretmeyi tesvik ediyoruz.'
+    title: 'İnovasyon',
+    description: 'Yaratıcı fikirleri destekliyor, yenilikçi çözümler üretmeyi kulüp kültürümüzün merkezine koyuyoruz.'
   },
   {
     icon: Heart,
     title: 'Teknik Ekip',
-    description: 'Her seviyeden ve her bolumden ekiplerimiz ile yarışmalara katılıyoruz .'
+    description: 'Her seviyeden ve her bölümden üyelerimizle iş birliği yapıyor, güçlü ekipler oluşturarak projeler geliştiriyoruz.'
   }
 ]
 
@@ -52,10 +52,9 @@ export default function AboutPage() {
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Hakkimizda</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Biz Kimiz?</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              KOU AI, yapay zeka tutkusunu paylasan ogrencileri bir araya getiren, 
-              ogrenme ve gelistirme odakli bir topluluktur.
+             Kocaeli Üniversitesi'nin yapay zeka devrimine yön veren gücü! Sadece teknolojiyi konuşan değil, birlikte öğrenen, gelişen ve geleceği üreten bir topluluk inşa ediyoruz.
             </p>
           </div>
         </div>
@@ -72,23 +71,19 @@ export default function AboutPage() {
                 </div>
                 <h2 className="text-2xl font-bold mb-4">Misyonumuz</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Ogrencilere yapay zeka alaninda pratik beceriler kazandirmak, 
-                  sektorle baglanti kurmalarini saglamak ve gelecekteki kariyerlerine 
-                  saglam bir temel olusturmak icin gerekli ortami sunmak.
+                  Yapay zeka ekosistemine teknik becerisi yüksek, yenilikçi ve etik değerlerin farkında yetenekler kazandırmak. Düzenlediğimiz eğitimler, hackathonlar ve atölyelerle üniversitemizde kalıcı bir teknoloji kültürü inşa etmek.
                 </p>
               </CardContent>
             </Card>
             
             <Card className="bg-card border-border">
               <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                  <Eye className="w-7 h-7 text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                  <Eye className="w-7 h-7 text-primary" />
                 </div>
                 <h2 className="text-2xl font-bold mb-4">Vizyonumuz</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Turkiye&apos;nin en aktif ve etkili ogrenci yapay zeka topluluklarindan 
-                  biri olmak ve mezunlarimizin global AI ekosisteminde sorumluluk 
-                  almis bireyler olmasini saglamak.
+                 Yalnızca üniversitemizin değil, Türkiye'nin en inovatif öğrenci topluluğu olarak anılmak; mezunlarımızın 'KOU AI' kültürünü ve çalışma disiplinini tüm sektöre taşımasını sağlamak.
                 </p>
               </CardContent>
             </Card>
@@ -100,9 +95,9 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Degerlerimiz</h2>
+            <h2 className="text-3xl font-bold mb-4">Bizi Biz Yapan Değerler</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Bizi bir arada tutan ve yonlendiren temel ilkelerimiz.
+              KOU AI kültürünü oluşturan, adımlarımıza yön veren ve bizi bir arada tutan temel ilkelerimiz.
             </p>
           </div>
           

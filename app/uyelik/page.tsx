@@ -21,9 +21,9 @@ import {
 const teams = [
   {
     id: 'uye-yonetimi',
-    label: 'Üye Yönetimi',
+    label: 'Üye',
     icon: Users,
-    description: 'Üyelik süreçleri ve topluluk yönetimi'
+    description: 'Külübün üyesi olmak istiyorum'
   },
   {
     id: 'sosyal-medya',
@@ -120,7 +120,7 @@ export default function ApplicationPage() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Üye Ol</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Koyuya Yapay Zeka ailesine katılın. İlgi alanınıza uygun ekibinizi seçerek başvurunuzu gönderin.
+              Kocaeli Üniversitesi Yapay Zeka ailesine katılın. İlgi alanınıza uygun ekibinizi seçerek başvurunuzu gönderin.
             </p>
           </div>
         </div>
@@ -166,7 +166,7 @@ export default function ApplicationPage() {
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="firstName">Ad *</Label>
+                          <Label htmlFor="firstName">Ad </Label>
                           <Input
                             id="firstName"
                             value={formData.firstName}
@@ -176,7 +176,7 @@ export default function ApplicationPage() {
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="lastName">Soyad *</Label>
+                          <Label htmlFor="lastName">Soyad </Label>
                           <Input
                             id="lastName"
                             value={formData.lastName}
@@ -188,7 +188,7 @@ export default function ApplicationPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="email">E-posta *</Label>
+                        <Label htmlFor="email">E-posta </Label>
                         <Input
                           id="email"
                           type="email"
@@ -200,7 +200,7 @@ export default function ApplicationPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="phone">Telefon <span className="text-muted-foreground">(opsiyonel)</span></Label>
+                        <Label htmlFor="phone">Telefon <span className="text-muted-foreground"></span></Label>
                         <Input
                           id="phone"
                           type="tel"

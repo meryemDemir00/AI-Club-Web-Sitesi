@@ -434,13 +434,12 @@ export default function EventsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
             <Badge variant="outline" className="mb-5 rounded-full border-primary/30 bg-primary/5 px-4 py-1.5 text-sm text-primary">
-              Etkinlik Vitrini
+              KOU AI Etkinlik Vitrini: Sırada Ne Var?
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-              Tasarimlarini yukledigin etkinlikler burada one ciksin
-            </h1>
+             Geleceği Şekillendiren Etkinliklerde Yerini Al            </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
-              Afis, duyuru tasarimi veya etkinlik kapagi ekleyin. Her etkinlik artik kendi gorseliyle daha guclu ve daha profesyonel gorunuyor.
+              Teknik eğitimlerden ilham verici seminerlere ve sosyal buluşmalara kadar tüm etkinliklerimizi buradan takip edebilirsiniz. İlgilendiğiniz kategoriyi seçin ve detayları keşfedin.
             </p>
           </div>
 
@@ -473,7 +472,7 @@ export default function EventsPage() {
 
       <EventSection
         title="Aktif Etkinlikler"
-        description="Admin panelinde surukleyip biraktigin sira burada korunur. Bu alan yeni etkinlik posterlerini sergilemek icin hazirlandi."
+        description=""
         events={activeEvents}
         onDetail={setSelectedEvent}
         isLoading={isLoading}
@@ -483,7 +482,7 @@ export default function EventsPage() {
         <section className="border-t border-border bg-card/20 py-16">
           <EventSection
             title="Tamamlanan Etkinlikler"
-            description="Gecmis etkinlikleri de afisleriyle birlikte arsivleyebilirsin."
+            description=""
             events={completedEvents}
             onDetail={setSelectedEvent}
             isLoading={false}
