@@ -10,8 +10,11 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <SiteLogo className="h-10 w-10" />
-              <span className="font-bold text-xl">KOU AI</span>
+              <SiteLogo className="h-12 w-12" />
+              <span className="font-bold text-xl">
+                <span>KOU </span>
+                <span className="text-primary">AI</span>
+              </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Yapay zeka tutkunlarinin bulusma noktasi. Birlikte ogreniyoruz, birlikte gelistiriyoruz.

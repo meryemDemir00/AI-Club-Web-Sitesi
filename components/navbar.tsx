@@ -22,13 +22,16 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
+      <nav className="container mx-auto px-4 h-[4.5rem] flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <SiteLogo
-            className="h-10 w-10 transition-transform duration-200 group-hover:scale-105"
+            className="h-12 w-12 transition-transform duration-200 group-hover:scale-105"
             priority
           />
-          <span className="font-bold text-xl tracking-tight">KOU AI</span>
+          <span className="font-bold text-xl tracking-tight">
+            <span>KOU </span>
+            <span className="text-primary">AI</span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}

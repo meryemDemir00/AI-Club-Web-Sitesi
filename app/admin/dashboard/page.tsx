@@ -459,7 +459,7 @@ export default function AdminDashboard() {
       <header className="bg-card border-b border-border sticky top-0 z-50">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <SiteLogo className="h-10 w-10" />
+            <SiteLogo className="h-12 w-12" />
             <div>
               <h1 className="font-bold">Admin Paneli</h1>
               <p className="text-xs text-muted-foreground">Koyuya Yapay Zeka Yönetimi</p>

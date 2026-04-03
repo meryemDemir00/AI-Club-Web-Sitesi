@@ -10,7 +10,7 @@ const nunito = Nunito({
 })
 
 export const metadata: Metadata = {
-  title: 'KOU AI - Yapay Zeka Kulubu',
+  title: 'Kocaeli Universitesi Yapay Zeka Kulubu',
   description: 'Yapay zeka tutkunlarinin bulusma noktasi. Etkinlikler, projeler ve egitimlerle gelecegi birlikte sekillendiriyoruz.',
   keywords: ['yapay zeka', 'AI', 'makine ogrenimi', 'deep learning', 'kulup'],
 }

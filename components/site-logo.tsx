@@ -15,19 +15,15 @@ export function SiteLogo({
   priority = false,
 }: SiteLogoProps) {
   return (
-    <div
-      className={cn(
-        'relative overflow-hidden rounded-xl bg-white ring-1 ring-border/80 shadow-sm',
-        className
-      )}
-    >
+    <div className={cn('relative', className)}>
       <Image
-        src="/site-logo.png"
+        src="/site-logo.gif"
         alt={alt}
         fill
         priority={priority}
+        unoptimized
         sizes="(max-width: 768px) 48px, 64px"
-        className={cn('object-contain p-1.5', imageClassName)}
+        className={cn('object-contain', imageClassName)}
       />
     </div>
   )
