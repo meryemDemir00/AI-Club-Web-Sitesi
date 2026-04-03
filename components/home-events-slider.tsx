@@ -125,14 +125,12 @@ export function HomeEventsSlider() {
         <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <Badge variant="outline" className="mb-4 rounded-full border-primary/25 bg-primary/10 px-4 py-1.5 text-primary">
-              Etkinlik Vitrini
+              Yaklaşan Etkinlikler
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Sıradaki etkinlikleri ana sayfada kaydırarak keşfet
-            </h2>
+             Kaçırmak İstemeyeceğin Fırsatlara Göz At            </h2>
             <p className="mt-4 text-base leading-7 text-muted-foreground">
-              Admin panelinde eklediğin etkinlik afişleri burada yatay bir vitrin olarak akıyor. Kullanıcılar tek bakışta etkinlikleri gezip detay sayfasına geçebiliyor.
-            </p>
+            Hackathonlar, uygulamalı atölyeler ve ilham verici seminerler... KOU AI etkinlik takviminde seni bekleyen sıradaki serüvene göz at sağa kaydır ve yerini hemen ayırt!            </p>
           </div>
 
           <div className="flex items-center gap-3">

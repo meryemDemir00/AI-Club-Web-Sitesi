@@ -55,7 +55,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Link href="/uyelik">
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Uye Ol
+              Üye Ol
             </Button>
           </Link>
         </div>
@@ -90,7 +90,7 @@ export function Navbar() {
             ))}
             <Link href="/uyelik" onClick={() => setMobileMenuOpen(false)}>
               <Button className="w-full mt-2 bg-primary hover:bg-primary/90 text-primary-foreground">
-                Uye Ol
+                Üye Ol
               </Button>
             </Link>
           </div>

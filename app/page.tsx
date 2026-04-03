@@ -40,8 +40,8 @@ const features = [
 const stats = [
   { value: '200+', label: 'Aktif Uye' },
   { value: '50+', label: 'Etkinlik' },
-  { value: '15+', label: 'Proje' },
-  { value: '3', label: 'Yil' }
+  { value: '10+', label: 'Proje' },
+  { value: '4', label: 'Yil' }
 ]
 
 export default function HomePage() {
@@ -61,28 +61,27 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
               <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">2026 Bahar Donemi Basliyor</span>
+              <span className="text-sm font-medium text-primary">Geleceği Yapay Zeka ile Kodla</span>
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-balance">
-              Yapay Zekanin
-              <span className="block text-primary">Gucunu Kesfedin</span>
+              Yapay Zekanın
+              <span className="block text-primary">Gücünü Keşfedin</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
-              KOU AI olarak, yapay zeka tutkunlarini bir araya getiriyor, ogrenme ve gelistirme firsatlari sunuyoruz. Gelecegi birlikte sekillendiriyoruz.
-            </p>
+KOU AI olarak sadece teoriyi değil, birlikte üretmeyi de önemsiyoruz. Projeler geliştir, eğitimlere katıl ve Kocaeli Üniversitesi'nin en yenilikçi topluluğunun bir parçası ol.            </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/uyelik">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2 w-full sm:w-auto">
-                  Uye Ol
+                  Üye Ol
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
               <Link href="/etkinlikler">
                 <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
-                  Etkinlikleri Gor
+                  Etkinlikleri Gör
                 </Button>
               </Link>
             </div>
@@ -108,9 +107,9 @@ export default function HomePage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Neler Yapiyoruz?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Birlikte Neler Başarıyoruz?</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Farkli ilgi alanlarini ve seviyeleri kapsayan genis bir etkinlik yelpazesi sunuyoruz.
+              Sadece öğrenmekle kalmıyor, ekosisteme değer katan projelere ve etkinliklere imza atıyoruz.
             </p>
           </div>
           
@@ -140,15 +139,15 @@ export default function HomePage() {
               <Rocket className="w-8 h-8 text-primary" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Hazir Misiniz?
+              Geleceği Şekillendirmeye Hazır mısın?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Yapay zeka dunyasina adim atin. Kulubumize katilarak ogrenme yolculugunuza baslayın.
+              Sadece teknolojiyi takip eden değil onu üretenlerden ol. KOU AI ailesine katıl fikirlerini koda kodunu gerçeğe dönüştür.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/uyelik">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2 w-full sm:w-auto">
-                  Hemen Uye Ol
+                  Hemen Üye Ol!
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
