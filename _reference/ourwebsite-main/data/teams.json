@@ -1,0 +1,95 @@
+{
+    "teams":[
+        {
+            "name":"YZT | TALOS",
+            "team_lead":"Betül BAYRAM",
+            "members":["Betül Bayram","Muhammed Hüseyin Karazeybek","Abdullah Velisoy","Osman Can","Sefa Bayram","Muhammet Yusuf Yıldırım","Servet Berkcan Arvas","Zeynep Uysal","Yusuf Konak","Burak Can Şahan","Fatma Nur Çetin","Cansu Kocaoğlu"],
+            "description":"Yapay Zeka Topluluğu altında Otonom Araç projesi geliştirmekte olan takımdır. Ulusal ve uluslararası birçok yarışmada yer almıştır ve almaya devam etmektedir.",
+            "matchesPlayed":0,
+            "competitions":["Teknofest Robotaksi-Binek Otonom Araç Yarışması"],
+            "imageURL":"TALOS.png",
+            "awards":["2021 En İyi Takım Ruhu Ödülü","2022 En İyi Takım Ruhu Ödülü"],
+            "tags":[],
+            "date": "2021-2023",
+            "link":"https://sites.google.com/view/yzt-talos-otonom-arac-takimi"
+
+        },
+        {
+            "name":"YZT | AITOLIA",
+            "team_lead":"Gülender Kuş",
+            "members":["Gülender Kuş","Osman Can","Fatma Nur Ayyıldız","Ahmet Aktaş","Muhammed Hüseyin Karazeybek"],
+            "description":"",
+            "matchesPlayed":0,
+            "competitions":["Sağlıkta Yapay Zeka Yarışması Kategori 1"],
+            "imageURL":"AITOLIA.png",
+            "awards":[""],
+            "tags":[],
+            "date": "2021-2023",
+            "link": "https://sites.google.com/view/yzt-aitolia"
+        },
+        {
+            "name":"YZT | BIOTOLIA",
+            "team_lead":"Gülender Kuş",
+            "members":["Gülender Kuş","Betül Bayram","Osman Can","Muhammed Hüseyin Karazeybek"],
+            "description":"",
+            "matchesPlayed":0,
+            "competitions":["Sağlıkta Yapay Zeka Yarışması Kategori 2"],
+            "imageURL":"AITOLIA.png",
+            "awards":[""],
+            "tags":[],
+            "date": "2021-2023",
+            "link":"https://sites.google.com/view/yzt-biotolia"
+        },
+        {
+            "name":"YZT | ARTIN",
+            "team_lead":"Osman Can",
+            "members":["Osman Can","Fatma Nur Ayyıldız","Ahmet Aktaş","Fatma Nur Çetin","Muhammed Hüseyin Karazeybek"],
+            "description":"",
+            "matchesPlayed":0,
+            "competitions":["Teknofest Ulaşımda Yapay Zeka Yarışması"],
+            "imageURL":"ARTIN.png",
+            "awards":[""],
+            "tags":[],
+            "date": "2021-2023",
+            "link": "https://sites.google.com/view/yzt-artin"
+        },
+        {
+            "name":"YZT | HERDAI",
+            "team_lead":"Zeynep Uysal",
+            "members":["Zeynep Uysal","İrem Alkan","F.Büşra Tilki","Şeyma İlgün","Muhammed Hüseyin Karazeybek"],         
+            "description":"",
+            "matchesPlayed":0,
+            "competitions":["Teknofest Karma Sürü Robotlar Yarışması"],
+            "imageURL":"HERDAI.png",
+            "awards":[""],
+            "tags":[],
+            "date": "2021-2023",
+            "link": "https://sites.google.com/view/yzt-herdai"
+        },
+        {
+            "name":"YZT | MEVZUU",
+            "team_lead":"Mustafa Sungur Polater",
+            "members":["Mustafa Sungur Polater","Osman Can","Muhammed Hüseyin Karazeybek"],
+            "description":"",
+            "matchesPlayed":0,
+            "competitions":["Teknofest Doğal Dil İşleme Yarışması"],
+            "imageURL":"MEVZUU.png",
+            "awards":[""],
+            "tags":[],
+            "date": "2021-2023",
+            "link": "https://sites.google.com/view/yzt-mevzuu"
+        },
+        {
+            "name":"YZT | ROBAI",
+            "team_lead":"Betül BAYRAM",
+            "members":["Betül Bayram","Osman Can","Muhammed Hüseyin Karazeybek", "Sefa Bayram", "Servet Berkcan Arvas", "Burak Can Şahan"],
+            "description":"",
+            "matchesPlayed":0,
+            "competitions":["Teknofest Robolig Yarışması"],
+            "imageURL":"ROBAI.png",
+            "awards":[""],
+            "tags":[],
+            "date": "2023"
+        }
+    ]
+}

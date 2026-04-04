@@ -1,0 +1,96 @@
+{
+    "projects": [
+        {
+            "id" : "0",
+            "name" : "Otonom Araç Projesi",
+            "description" : "YZT | TALOS Otonom Araç Takımı olarak düsturumuz toplumun, devlet ve sanayinin yapay zeka alanındaki sorunlarına çözüm ortağı olmak; ülkemizde ve dünyada otonom araç teknolojilerinin önde gelen temsilcilerinden olmaktır",
+            "imageURL" : "",
+            "website" : "",
+            "category" : "",
+            "formURL" : "",
+            "startDate" : "2021-06",
+            "endDate" : "2023-06",
+            "registrationOpen" : false,
+            "attendeesCount" : "12",
+            "tags" : ["Görüntü işleme", "Makine öğrenmesi","Sensör Füzyon", "Mapping"]
+        },
+
+        {
+            "id" : "1", 
+            "name" : "Meme Kanseri Tespiti Projesi ",
+            "description" : "Kanser, vücudun herhangi bir yerinde hücrelerin anormal ve kontrolsüz bir şekilde büyüdüğü ve diğer bölgelere yayılabildiği ölümcül bir hastalıktır. Kadınlarda en sık görülen kanser türü meme kanseridir ve erken teşhis büyük önem taşır. Meme kanserini taramak için yaygın olarak mamografi kullanılır. Türkiye'de de bu taramalar KETEM tarafından yürütülür ve değerlendirmelerde BI-RADS sınıflandırma sistemi kullanılır. YZT|AITOLIA takımı olarak T.C. Sağlık Bakanlığı'ndan sağlanan verileri kullanarak meme kanseri tespitinde yüksek doğruluk oranları elde etmeyi hedeflemekteyiz.",
+            "imageURL" : "",
+            "website" : "",
+            "category" : "",
+            "formURL" : "",
+            "startDate" : "2022-10",
+            "endDate" : "2023-05",
+            "registrationOpen" : false,
+            "attendeesCount" : "4",
+            "tags" : ["Makine öğrenmesi", ""]
+        },
+
+        {
+            "id" : "2",
+            "name" : "Akciğer Kanseri Tespiti Projesi",
+            "description" : "Yeni nesil omik teknolojiler, hastalıkların teşhisi ve tedavisinde önemli bir rol oynamaktadır. Genom dizileme, proteomik ve metabolomik veriler sayesinde büyük miktarda biyomolekül bilgisine ulaşılmıştır. Ancak, genetik varyasyonların anlamlandırılması ve hastalık ilişkilerinin kurulması için fenotipik bilgilerle birlikte değerlendirilmesi gerekmektedir. Yapay zekâ temelli biyoinformatik araçların kullanılması, hastalıkların teşhisi ve tedavisine yönelik inovatif yaklaşımların geliştirilmesine katkı sağlamaktadır. Aynı zamanda mevcut veri setleri üzerinde aday biyobelirteçlerin ve ilaçların geliştirilmesi için de kullanılabilecek yeni yaklaşımlar elde edilebilir.",
+            "imageURL" : "",
+            "website" : "",
+            "category" : "",
+            "formURL" : "",
+            "startDate" : "",
+            "endDate" : "",
+            "registrationOpen" : false,
+            "attendeesCount" : "5",
+            "tags" : ["", ""]
+        },
+
+      
+
+        {
+            "id" : "3", 
+            "name" : "Görüntü İşlemeyle Araç Tespiti Projesi",
+            "description" : "Bu proje, uçan arabaların çevresel farkındalığını artırmak için geliştirilecek Yapay Zeka tabanlı nesne tespit sistemi ile görsel iniş asistanını hedeflemektedir. Uçan arabaların alt-görüş kameraları kullanılarak taşıtlar ve insanlar gibi nesnelerin tespit edilmesi gerekmektedir. Aynı zamanda uçan arabaların iniş-kalkış yaptığı alanlar olan Uçan Araba Park ve Uçan Ambulans İniş alanlarının tespit edilerek, iniş için uygun olup olmadığının doğrulanması gerekmektedir.",
+            "imageURL" : "",
+            "website" : "",
+            "category" : "",
+            "formURL" : "",
+            "startDate" : "",
+            "endDate" : "",
+            "registrationOpen" : false,
+            "attendeesCount" : "5",
+            "tags" : ["Görüntü işleme", "Makine öğrenmesi","Derin öğrenme"]
+        },
+
+        {
+            "id" : "4", 
+            "name" : "Karma Sürü Robot Formasyonu ",
+            "description" : "YZT|HERDAI ekibi olarak karma sürü robotlar projesini, İnsansız Hava Araçları (İHA) ve İnsansız Kara Araçları (İKA) ile otonom görev yapabilme kabiliyetini geliştirme amacıyla gerçekleştirdik. Sivil alanda, orman yangınlarına etkin müdahale gibi bazı görevleri sürü halinde başarıyla yerine getirebilmesi için formasyon algoritmaları ve görüntü işleme teknikleri kullanılarak projeyi gerçekleştirmek amaçlanmıştır.",
+            "imageURL" : "",
+            "website" : "",
+            "category" : "",
+            "formURL" : "",
+            "startDate" : "",
+            "endDate" : "",
+            "registrationOpen" : false,
+            "attendeesCount" : "5",
+            "tags" : ["Formasyon", "sürü formasyon", "Görüntü işleme"]
+        },
+
+        {
+            "id" : "5", 
+            "name" : "Ceza Hukukunda Arama Motoru ",
+            "description" : "MEVZUU Takımı bir kimseye onur, şeref ve saygınlığını rencide edebilecek nitelikte somut bir fiil veya olgu isnat eden veya sövmek suretiyle bir kimsenin onur, şeref ve saygınlığına saldıran cümleleri doğal dil işleme yöntemleri ile tespit edilmesi ve ortaya çıkan teknik yetkinliğin sektörel kullanım alanları üzerine öneriler iletilmesini amaçlamaktadır. Bu doğrultuda Türkçe NLP alanındaki geliştirilmiş teknolojilerden yararlanarak arama motoru altyapısını geliştirmeyi planlamaktayız.Projemizde LSTM tabanlı Derin Öğrenme metotları kullanarak Sentiment Analysis, Clustering ve Classification işlemleri yapılacaktır.",
+            "imageURL" : "",
+            "website" : "",
+            "category" : "",
+            "formURL" : "",
+            "startDate" : "",
+            "endDate" : "",
+            "registrationOpen" : false,
+            "attendeesCount" : "3",
+            "tags" : ["NLP", "Derin Öğrenme"]
+        }
+       
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "teamMembers":[
+        {
+            "name":"",
+            "title":null,
+            "email":"",
+            "phone":"",
+            "photoURL":"",
+            "biography":"",
+            "socialMedia":[ {"name": "Twitter", "handle": ""}],
+            "websiteURL":""
+        }
+    ]
+}

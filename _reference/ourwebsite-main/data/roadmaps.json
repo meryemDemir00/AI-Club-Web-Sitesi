@@ -1,0 +1,1718 @@
+{
+  "roadmaps": [
+    {
+      "name": "Genel Konular",
+      "topics": [
+        {
+          "topic": "Algoritma Mantığı",
+          "subtopics": [],
+          "sources": []
+        },
+        {
+          "topic": "Programlama Mantığı",
+          "subtopics": []
+        },
+        {
+          "topic": "Programlama Dili",
+          "subtopics": [
+            {
+              "title": "Python",
+              "sources": [
+                {
+                  "title": "1 Videoda Python - OOP",
+                  "link": "https://www.youtube.com/watch?v=XD2yLGZVUzI&list=PLXuv2PShkuHwGWVVBIffQYJGFLL-lGqsY&index=25"
+                }
+              ]
+            },
+            {
+              "title": "Cpp",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Yazılım Geliştirme Araçları",
+          "subtopics": [
+            {
+              "title": "Visual Studio Code",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Jupyter Notebook",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Matematik",
+          "subtopics": [
+            {
+              "title": "Cebir",
+              "sources": [
+                {
+                  "title": "Veri Bilimi için Matematik",
+                  "link": "https://coursera.pxf.io/KeY6G7"
+                },
+                {
+                  "title": "Veri Bilimi için Matematik Becerileri",
+                  "link": "https://coursera.pxf.io/x9qqm1"
+                }
+              ]
+            },
+            {
+              "title": "Lineer Cebir",
+              "sources": [
+                {
+                  "title": "Linner Cebire Giriş",
+                  "link": "https://imp.i115008.net/ORBjyr"
+                },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "İstatistik & Olasılık",
+              "sources": [
+                {
+                  "title": "İstatistik Giriş",
+                  "link": "https://www.udacity.com/course/intro-to-statistics--st101?irclickid=2bV0wg2JtxyPT1IyXUS9p1tJUkFwjbUhEXBtUk0&irgwc=1&utm_source=affiliate&utm_medium=&aff=2406137&utm_term=&utm_campaign=__&utm_content=&adid=786224"
+                },
+                {
+                  "title": "Temel İstatistik",
+                  "link": "https://imp.i115008.net/ORBjyr"
+                },
+                {
+                  "title": "İstatistik & Olasılık",
+                  "link": "https://www.khanacademy.org/math/statistics-probability"
+                },
+                {
+                  "title": "Veri Bilimi: İStatistik ve Makine Öğrenmesi ",
+                  "link": "https://coursera.pxf.io/MXYqYY"
+                },
+                {
+                  "title": "Veri Bilimi için İstatistik",
+                  "link": "https://youtu.be/Vfo5le26IhY"
+                },
+
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Python Kütüphaneleri",
+          "subtopics": [
+            { "title": "Time", "sources": [{ "title": "", "link": "" }] },
+            {
+              "title": "Os",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Threading",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Numpy",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Pandas",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Matplotlib",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Seaborn",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "OpenCV",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Keras",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Scikit-Learn",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Tensorflow",
+              "sources": [
+                {
+                  "title": "TensorFlow ile İleri Seviye Bilgisayarlı Görü",
+                  "link": "https://imp.i115008.net/NKkmQP"
+                },
+                {
+                  "title": "GCP üzerinde Tensorflowla Görüntü Anlama",
+                  "link": "https://coursera.pxf.io/rn1Y7Q"
+                },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Pytorch",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Git/Github",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Veri Yapıları",
+          "subtopics": [
+            {
+              "title": "Linked List",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Stack",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Queue",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Binary Tree",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Heap",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Hash",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Graph",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "AVL Tree",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "B/B+ Tree",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Arama ve Sıralama Algoritmaları",
+          "subtopics": [
+            {
+              "title": "Linear Search",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Binary Search",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Ternary Search",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Jump Search",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Interpolation Search",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Selection Sort",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Bubble Sort",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Insertion Sort",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            { "title": "Merge Sort", "sources": [{ "title": "", "link": "" }] },
+            { "title": "Quick Sort", "sources": [{ "title": "", "link": "" }] },
+            { "title": "Heap Sort", "sources": [{ "title": "", "link": "" }] },
+            {
+              "title": "Counting Sort",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            { "title": "Radix Sort", "sources": [{ "title": "", "link": "" }] },
+            {
+              "title": "Bucket Sort",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            { "title": "BFS", "sources": [{ "title": "", "link": "" }] },
+            { "title": "DFS", "sources": [{ "title": "", "link": "" }] }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Makine Öğrenmesi",
+      "topics": [
+        {
+          "topic": "Regresyon",
+          "subtopics": [
+            {
+              "title": "Linear Regresyon",
+              "sources": []
+            },
+            {
+              "title": "Ridge Regresyon",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Lasso Regresyon",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "ElasticNet Regresyon",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "K En Yakın Komşu",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Destek Vektör Regresyonu",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Yapay Sinir Ağları",
+              "sources": [
+                {
+                  "title": "Evrişimli Sİnir Ağları",
+                  "link": "https://coursera.pxf.io/LPY79j"
+                },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "CART",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Random Forests",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "GBM",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "XGBoost",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "Light GBM",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            },
+            {
+              "title": "CatBoost",
+              "sources": [
+                { "title": "", "link": "" },
+                { "title": "", "link": "" },
+                { "title": "", "link": "" }
+              ]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Sınıflandırma",
+          "subtopics": [
+            {
+              "title": "Lojistik Regresyon",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": " K En Yakın Komşu",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Destek Vektör Makineleri",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Yapay Sinir Ağları",
+              "sources": [
+                {
+                  "title": "Yapay Sinir Ağları Nedir ?",
+                  "link": "https://www.veribilimiokulu.com/yapay-sinir-agiartificial-neural-network-nedir/"
+                },
+                {
+                  "title": "Tıpta Yapay Sinir Ağarı",
+                  "link": "https://www.udemy.com/course/tpta-yapay-zeka-beyin-mr-goruntusunden-tumor-segmentasyonu/"
+                },
+                {
+                  "title": "Evrişimli Sİnir Ağları",
+                  "link": "https://coursera.pxf.io/LPY79j"
+                }
+              ]
+            },
+            {
+              "title": "CART",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Random Forests GBM",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "XGBoost",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "LightGBM",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "CatBoos",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Kümeleme",
+          "subtopics": [
+            {
+              "title": "Categorical Variables",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Ordinal Variables",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Numerical Variables",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Değişken Türleri",
+          "subtopics": [
+            {
+              "title": "Categorical Variables",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Ordinal Variables",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Numerical Variables",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Cost Functions",
+          "subtopics": [
+            {
+              "title": "Regression Cost Function",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Binary Cost Function",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Multi-Class Classification Cost Function",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Terimler",
+          "subtopics": [
+            {
+              "title": "Gradient Descent",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Overfitting",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Underfitting",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Training, test and validation data",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Precision",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Recall",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Bias, Variance Model Selection",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Derin Öğrenme",
+      "topics": [
+        {
+          "topic": "Tensorflow,Pytorch,Tensorboard",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "TensorFlow ile İleri Seviye Bilgisayarlı Görü",
+              "link": "https://imp.i115008.net/NKkmQP"
+            },
+            {
+              "title": "Pytorch İle Derin Öğrenmeye Giriş",
+              "link": "https://imp.i115008.net/e4r5XX"
+            },
+            {
+              "title": "Derin Öğrenme için Tensorflow'a giriş",
+              "link": "https://imp.i115008.net/Ygqvam"
+            }
+          ]
+        },
+
+        {
+          "topic": "Yapay Sinir Ağları",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Yapay Sinir Ağı Nedir?",
+              "link": "https://www.veribilimiokulu.com/yapay-sinir-agiartificial-neural-network-nedir/"
+            },
+            {
+              "title": "Derin Öğrenme ve Sinir Ağlarına Keras ile giriş",
+              "link": "https://imp.i115008.net/Ygqvam"
+            },
+            {
+              "title": "Evrişimli Sİnir Ağları",
+              "link": "https://coursera.pxf.io/LPY79j"
+            }
+          ]
+        },
+        {
+          "topic": "Gözetimli Öğrenme",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Gözetimsiz Öğrenme",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Aktivasyon Fonsksiyonları",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "İleri Yayılım",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Geri Yayılım",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Hiperarametreler",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Learning Rate",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Batch Normalization",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Batch Size",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Transfer Learning",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Yapay Zeka Beyin Mr Görüntüsünden Tümör Segmentasyonu",
+              "link": "https://www.udemy.com/course/tpta-yapay-zeka-beyin-mr-goruntusunden-tumor-segmentasyonu/learn/lecture/21481738#content"
+            }
+          ]
+        },
+        {
+          "topic": "Optimizasyon",
+          "subtopics": [
+            {
+              "title": "SGD",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Momentum",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Adam",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "AdaGrad",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "AdaDelta",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Nadam",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "RMSProp",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Regularizasyon",
+          "subtopics": [
+            {
+              "title": "Early stopping",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Dropout",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Parameter Penalties",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Data Augmentation",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Adversarial Training",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Gradient Descent",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Veri Arttırma",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Loss Fonksiyonları",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Vision,Audio,NLP features",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Encoder, Decoder, Autoencoder, Transformer",
+          "subtopics": [],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "ANN ve CNN",
+          "subtopics": [
+            {
+              "title": "Bilgisayarlı Görü",
+              "sources": [
+                {
+                  "title": "Bilgisayarlı Görüye Giriş",
+                  "link": "https://imp.i115008.net/GaWjk"
+                },
+                {
+                  "title": "Bilgisaayrlı GÖrü Uzmanı Olun!!",
+                  "link": "https://imp.i115008.net/m9Zdq"
+                },
+                {
+                  "title": "TensorFlow ile İleri Seviye Bilgisayarlı Görü",
+                  "link": "https://imp.i115008.net/NKkmQP"
+                },
+                {
+                  "title": "Bilgisayarlı Görü ve Görüntü İşlemeye Giriş",
+                  "link": "https://coursera.pxf.io/DVM74j"
+                },
+                {
+                  "title": "Bilgisayarlı Görü Uzmanı Olun",
+                  "link": "https://imp.i115008.net/ELE12"
+                },
+                {
+                  "title": "A'dan Z'ye Bilgisayarlı Görü ve Derin Öğrenme: OpenCV, SSD & GANs",
+                  "link": "https://click.linksynergy.com/deeplink?id=Vrr1tRSwXGM&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomputer-vision-a-z%2F"
+                }
+              ]
+            },
+            {
+              "title": "Evrişim İşlemi",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Padding",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Stride",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Pooling",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Tensor nedir?",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "LeNet15, VGG16, ResNet",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "RNN LSTM GAN",
+          "subtopics": [
+            {
+              "title": "İleri ve Geri Yayılım",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "GRU",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Bidirectional RNN",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Deep RNN",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Kapsül Ağları",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "GAN?",
+              "sources": [
+                {
+                  "title": "A'dan Z'ye Bilgisayarlı Görü ve Derin Öğrenme: OpenCV, SSD & GANs",
+                  "link": "https://click.linksynergy.com/deeplink?id=Vrr1tRSwXGM&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomputer-vision-a-z%2F"
+                }
+              ]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Görüntü İşleme",
+      "topics": [
+        {
+          "topic": "Matematik",
+          "subtopics": [
+            {
+              "title": "Olasılık & İstatistik",
+              "sources": [
+                {
+                  "title": "Olasılık Ve İstatistik",
+                  "link": "https://imp.i115008.net/16AXa"
+                },
+                {
+                  "title": "İstatiğe Giriş",
+                  "link": "https://www.udacity.com/course/intro-to-statistics--st101?irclickid=2yAVY%3A2JtxyPT1IyXUS9p1tJUkFwjYUPcVtmVE0&irgwc=1&utm_source=affiliate&utm_medium=&aff=2406137&utm_term=&utm_campaign=__&utm_content=&adid=786224"
+                },
+                {
+                  "title": "Basit İstatistik",
+                  "link": "https://www.coursera.org/learn/basic-statistics?irclickid=VY6TRK2JsxyPRh5Vylw%3A0xWXUkFwjYQncVtmVE0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=3310965&utm_content=b2c"
+                },
+                {
+                  "title": "Olasılık Ve İstatistik",
+                  "link": "https://www.khanacademy.org/math/statistics-probability"
+                },
+                {
+                  "title": "İstatistik Ve Makine Öğrenmesi",
+                  "link": "https://www.coursera.org/specializations/data-science-statistics-machine-learning?irclickid=VY6TRK2JsxyPRh5Vylw%3A0xWXUkFwjdyncVtmVE0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=3310965&utm_content=b2c"
+                },
+                {
+                  "title": "Veri Bilimi İçin İstatistik",
+                  "link": "https://www.youtube.com/watch?v=Vfo5le26IhY"
+                },
+                {
+                  "title": "Veri Bilimi: İStatistik ve Makine Öğrenmesi ",
+                  "link": "https://coursera.pxf.io/MXYqYY"
+                },
+                {
+                  "title": "Veri Bilimi için İstatistik",
+                  "link": "https://youtu.be/Vfo5le26IhY"
+                },
+                {
+                  "title": "Veri Bilimciler İçin Pratik İstatistik ",
+                  "link": "https://www.amazon.it/dp/149207294X/ref=as_li_ss_tl?dchild=1&keywords=statistics&language=en_US&sr=8-1&linkCode=gg2&linkId=9822e781ebde6920f095ba9efe8e95ab&tag=mltut-20"
+                }
+              ]
+            },
+            {
+              "title": "Lineer Cebir",
+              "sources": [
+                {
+                  "title": "Mühendisler İçin Matrix Cebiri",
+                  "link": "https://imp.i384100.net/ZdjA2W"
+                },
+                {
+                  "title": "Lineer Cebir Tekrar Kursu",
+                  "link": "https://www.udacity.com/course/linear-algebra-refresher-course--ud953?irclickid=2yAVY%3A2JtxyPT1IyXUS9p1tJUkFwjfyOcVtmVE0&irgwc=1&utm_source=affiliate&utm_medium=&aff=2406137&utm_term=&utm_campaign=__&utm_content=&adid=786224"
+                }
+              ]
+            },
+            {
+              "title": "Calculus",
+              "sources": [
+                {
+                  "title": "Calculus'a Giriş",
+                  "link": "https://imp.i384100.net/kj2q5v"
+                },
+                {
+                  "title": "Veri Bilimi için Matematik Becerileri",
+                  "link": "https://coursera.pxf.io/x9qqm1"
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Veri Bilimi için Matematik",
+              "link": "https://coursera.pxf.io/KeY6G7"
+            },
+            {
+              "title": "Matematik Kursu",
+              "link": "https://www.khanacademy.org/math"
+            },
+            {
+              "title": "Veri Bilimi Matematik Yetenekleri",
+              "link": "https://www.coursera.org/learn/datasciencemathskills?irclickid=VY6TRK2JsxyPRh5Vylw%3A0xWXUkFwjaQOcVtmVE0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=3310965&utm_content=b2c"
+            }
+          ]
+        },
+        {
+          "topic": "Programlama Dili",
+          "subtopics": [
+            {
+              "title": "Python",
+              "sources": [
+                {
+                  "title": "Tek Videoda Python OOP",
+                  "link": "https://www.youtube.com/watch?v=XD2yLGZVUzI&list=PLXuv2PShkuHwGWVVBIffQYJGFLL-lGqsY&index=24"
+                },
+                {
+                  "title": "Python Veri Yapıları Oynatma Listesi",
+                  "link": "https://www.youtube.com/playlist?list=PLh9ECzBB8tJOoFYmIIiwFjgXDCD9uiD_i"
+                },
+                {
+                  "title": "Python Veri Yapıları",
+                  "link": "https://github.com/OmkarPathak/Data-Structures-using-Python"
+                },
+                {
+                  "title": "Kızıltan Veri Yapıları",
+                  "link": "http://cagataykiziltan.net/veri-yapilari-data-structures/"
+                },
+                {
+                  "title": "GFG Veri Yapıları",
+                  "link": "https://www.geeksforgeeks.org/data-structures/"
+                },
+                {
+                  "title": "GFG Python  OOP",
+                  "link": "https://www.geeksforgeeks.org/python-oops-concepts/"
+                },
+                {
+                  "title": "Python Dersleri (Türkçe)",
+                  "link": "https://www.youtube.com/playlist?list=PLWctyKyPphPiul3WbHkniANLqSheBVP3O"
+                },
+                {
+                  "title": "Introduction to Python Programming",
+                  "link": "https://www.udacity.com/course/introduction-to-python--ud1110?irclickid=2yAVY%3A2JtxyPT1IyXUS9p1tJUkFwjbyWcVtmVE0&irgwc=1&utm_source=affiliate&utm_medium=&aff=2406137&utm_term=&utm_campaign=__&utm_content=&adid=786224"
+                },
+                {
+                  "title": "The Python Tutorial Document",
+                  "link": "https://docs.python.org/3/tutorial/index.html"
+                },
+                {
+                  "title": "CS Dojo",
+                  "link": "https://www.youtube.com/channel/UCxX9wt5FWQUAAz4UrysqK9A"
+                },
+                {
+                  "title": "Python For Beginners",
+                  "link": "https://www.udemy.com/course/python-for-every1/?ranMID=39197&ranEAID=Vrr1tRSwXGM&ranSiteID=Vrr1tRSwXGM-iuwFXeN_1CP6D9poQMBwKQ&LSNPUBID=Vrr1tRSwXGM&utm_source=aff-campaign&utm_medium=udemyads"
+                },
+                {
+                  "title": " Yeni Başlayanlar İçin Python Eğitimi [Tam Ders] 2019 ",
+                  "link": "https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=17s"
+                },
+                {
+                  "title": " Python Tutorial for Beginners 1: Install and Setup for Mac and Windows",
+                  "link": "https://www.youtube.com/watch?v=YYXdXT2l-Gg&feature=youtu.be  "
+                }
+              ]
+            },
+            {
+              "title": "Cpp",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "OpenCV",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Bigisayar Görüsü Ve Görüntü İşlemeye Giriş",
+              "link": "https://www.coursera.org/learn/introduction-computer-vision-watson-opencv?irclickid=VY6TRK2JsxyPRh5Vylw%3A0xWXUkFwjIwHcXVy1s0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=3310965&utm_content=b2c"
+            },
+            {
+              "title": "OpenCV İle Bilgisayar Görüsü",
+              "link": "https://www.udemy.com/course/computer-vision-with-opencv-official-opencv-free-course/?ranMID=39197&ranEAID=Vrr1tRSwXGM&ranSiteID=Vrr1tRSwXGM-Is2glHhewaXuFIL769lAfw&LSNPUBID=Vrr1tRSwXGM&utm_source=aff-campaign&utm_medium=udemyads"
+            },
+            {
+              "title": "Bilgisayar Görüsü Ve OpenCV için Python",
+              "link": "https://www.udemy.com/course/python-for-computer-vision-with-opencv-and-deep-learning/?ranMID=39197&ranEAID=Vrr1tRSwXGM&ranSiteID=Vrr1tRSwXGM-_5d4UsgF0xdauzvw90tBFQ&LSNPUBID=Vrr1tRSwXGM&utm_source=aff-campaign&utm_medium=udemyads"
+            },
+            {
+              "title": "Derin Öğrenme Ve Bilgisayar Görüsü",
+              "link": "https://www.udemy.com/course/computer-vision-a-z/?ranMID=39197&ranEAID=Vrr1tRSwXGM&ranSiteID=Vrr1tRSwXGM-PlOZ1Nn5ptiZtwGZqrcUdg&LSNPUBID=Vrr1tRSwXGM&utm_source=aff-campaign&utm_medium=udemyads"
+            },
+            {
+              "title": "OpenCV İle Python Projesi",
+              "link": "https://www.coursera.org/learn/python-project?irclickid=VY6TRK2JsxyPRh5Vylw%3A0xWXUkFwjcVHcXVy1s0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=3310965&utm_content=b2c"
+            },
+            {
+              "title": "Python İle OpenCV Öğrenimi",
+              "link": "https://www.amazon.it/dp/1789531616?crid=2ECZTN5TGYARJ&keywords=computer+vision&sprefix=computer+vision,aps,265&ref_=as_li_ss_tl&language=en_US&sr=8-8&linkCode=gg2&linkId=64cf9712763f3f3707570a27c83755b2&tag=mltut-20"
+            },
+            {
+              "title": "Bilgisayar Görüsü, Derin Öğrenme Ve OpenCV'ye Giriş",
+              "link": "https://pyimagesearch.com/start-here/"
+            },
+            {
+              "title": "OpenCV Tutorials",
+              "link": "https://docs.opencv.org/4.x/d9/df8/tutorial_root.html"
+            },
+            {
+              "title": "4 Saatte OpenCV Ve Python",
+              "link": "https://www.youtube.com/watch?v=oXlwWbU8l2o"
+            },
+            {
+              "title": "3 Saate OpenCV",
+              "link": "https://www.youtube.com/watch?v=WQeoO7MI0Bs"
+            },
+            {
+              "title": "Yeni Başlayanlar İçin 10 Saate Python",
+              "link": "https://www.youtube.com/watch?v=N81PCpADwKQ"
+            },
+            {
+              "title": "A'dan Z'ye Bilgisayarlı Görü ve Derin Öğrenme: OpenCV, SSD & GANs",
+              "link": "https://click.linksynergy.com/deeplink?id=Vrr1tRSwXGM&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomputer-vision-a-z%2F"
+            }
+          ]
+        },
+        {
+          "topic": "Derin Öğrenme",
+          "subtopics": [
+            {
+              "title": "Scikit-Learn",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Pytorch",
+              "sources": [
+                {
+                  "title": "Pytorch İle Derin Öğrenmeye Giriş",
+                  "link": "https://www.udacity.com/course/deep-learning-pytorch--ud188?irclickid=2yAVY%3A2JtxyPT1IyXUS9p1tJUkFwj8xucVtmVE0&irgwc=1&utm_source=affiliate&utm_medium=&aff=2406137&utm_term=&utm_campaign=__&utm_content=&adid=786224"
+                },
+                {
+                  "title": "Pytorch İle Derin Öğrenmeye Başlangıç",
+                  "link": "https://www.datacamp.com/courses/introduction-to-deep-learning-with-pytorch?irclickid=VY6TRK2JsxyPRh5Vylw%3A0xWXUkFwj5X%3AcVtmVE0&irgwc=1&utm_medium=affiliate&utm_source=impact&utm_campaign=000000_1-2355712_2-mix_3-all_4-na_5-na_6-na_7-mp_8-affl-ip_9-na_10-bau_11-Aqsa%20Zafar&utm_content=ONLINE_TRACKING_LINK&utm_term="
+                }
+              ]
+            },
+            {
+              "title": "Keras",
+              "sources": [
+                {
+                  "title": "Keras İle Derin Öğrenme Ve Yapay Sinir Ağlarına Giriş",
+                  "link": "https://www.coursera.org/learn/introduction-to-deep-learning-with-keras?irclickid=VY6TRK2JsxyPRh5Vylw%3A0xWXUkFwj8UmcVtmVE0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=3310965&utm_content=b2c"
+                },
+                {
+                  "title": "Kerasla İleri Seviye Derin Öğrenme",
+                  "link": "https://www.datacamp.com/courses/advanced-deep-learning-with-keras?irclickid=VY6TRK2JsxyPRh5Vylw%3A0xWXUkFwj8QPcVtmVE0&irgwc=1&utm_medium=affiliate&utm_source=impact&utm_campaign=000000_1-2355712_2-mix_3-all_4-na_5-na_6-na_7-mp_8-affl-ip_9-na_10-bau_11-Aqsa%20Zafar&utm_content=ONLINE_TRACKING_LINK&utm_term="
+                },
+                {
+                  "title": "Keras İle Derin Öğrenme ",
+                  "link": "https://www.udemy.com/course/complete-tensorflow-2-and-keras-deep-learning-bootcamp/?ranMID=39197&ranEAID=Vrr1tRSwXGM&ranSiteID=Vrr1tRSwXGM-TYytpypRe.BKgo5jIYVOvw&LSNPUBID=Vrr1tRSwXGM&utm_source=aff-campaign&utm_medium=udemyads"
+                },
+                {
+                  "title": "Pytorch İle Derin Yapay Sinir Ağları",
+                  "link": "https://www.coursera.org/learn/deep-neural-networks-with-pytorch?irclickid=VY6TRK2JsxyPRh5Vylw%3A0xWXUkFwj%3Aw-cVtmVE0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=3310965&utm_content=b2c"
+                },
+                {
+                  "title": "Pytorch İle Derin Öğrenme Ve Yapay Zeka",
+                  "link": "https://www.udemy.com/course/pytorch-deep-learning/?ranMID=39197&ranEAID=Vrr1tRSwXGM&ranSiteID=Vrr1tRSwXGM-n3Bd8kL6WdGPytr5F3Wcpw&LSNPUBID=Vrr1tRSwXGM&utm_source=aff-campaign&utm_medium=udemyads"
+                },
+                {
+                  "title": "Derin Öğrenme için Pytorch",
+                  "link": "https://www.udemy.com/course/pytorch-deep-learning/?ranMID=39197&ranEAID=Vrr1tRSwXGM&ranSiteID=Vrr1tRSwXGM-n3Bd8kL6WdGPytr5F3Wcpw&LSNPUBID=Vrr1tRSwXGM&utm_source=aff-campaign&utm_medium=udemyads"
+                },
+                {
+                  "title": "Pytorch Tutorials",
+                  "link": "https://pytorch.org/tutorials/"
+                }
+              ]
+            },
+            {
+              "title": "Theano",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Caffe",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "CNN",
+          "subtopics": [
+            {
+              "title": "ReLu",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Pooling",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Flattening",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Full Connection",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            {
+              "title": "OpenVINO ile Yapay Zekanın Temelleri",
+              "link": "https://imp.i115008.net/NKkmQP"
+            },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "RNN",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Temel RNN Ve CNN",
+              "link": "https://www.coursera.org/learn/cnns-and-rnns?irclickid=VY6TRK2JsxyPRh5Vylw%3A0xWXUkFwj71ucVtmVE0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=3310965&utm_content=b2c"
+            },
+            {
+              "title": "Keras İle Basit RNN",
+              "link": "https://www.coursera.org/projects/simple-recurrent-neural-network-keras?irclickid=VY6TRK2JsxyPRh5Vylw%3A0xWXUkFwj7RPcVtmVE0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=3310965&utm_content=b2c"
+            },
+            {
+              "title": "RNN Tutorial",
+              "link": "https://www.youtube.com/watch?v=lWkFhVq9-nc"
+            }
+          ]
+        },
+        {
+          "topic": "Örnek Projeler",
+          "subtopics": [
+            {
+              "title": "People counting tool",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Colors detection",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Object trackingin a video",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Pedestrian detection",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Hand gesture recognition",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Human emotion recognition",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Road lane detection",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Business card scanner",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "License plate recognition",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Handwritten digit recognition",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Iris Flowers Classification",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Family photo face detection",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "LEGO Brick Finder",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "PPE Detection",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Face mask detection",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Robotik",
+      "topics": [
+        {
+          "topic": "Matematik",
+          "subtopics": [
+            {
+              "title": "Cebir",
+              "sources": [
+                {
+                  "title": "Kalkülüse giriş",
+                  "link": "https://imp.i384100.net/kj2q5v"
+                },
+                {
+                  "title": "Cebire Giriş",
+                  "link": "https://www.khanacademy.org/math/algebra"
+                },
+                {
+                  "title": "Veri Bilimi için Matematik",
+                  "link": "https://coursera.pxf.io/KeY6G7"
+                },
+                {
+                  "title": "Veri Bilimi için Matematik Becerileri",
+                  "link": "https://coursera.pxf.io/x9qqm1"
+                }
+              ]
+            },
+            {
+              "title": "Lineer Cebir",
+              "sources": [
+                {
+                  "title": "Lineer Cebire Giriş",
+                  "link": "https://imp.i115008.net/ORBjyr"
+                }
+              ]
+            },
+            {
+              "title": "İstatistik & Olasılık",
+              "sources": [
+                {
+                  "title": "İstatistik Giriş",
+                  "link": "https://imp.i115008.net/16AXa"
+                },
+                {
+                  "title": "Temel İstatistik",
+                  "link": "https://imp.i115008.net/ORBjyr"
+                },
+                {
+                  "title": "İstatistik ve Olasılık",
+                  "link": "https://www.khanacademy.org/math/statistics-probability"
+                },
+                {
+                  "title": "Veri Bilimciler için Temel istatistik",
+                  "link": "https://amzn.to/3p0X7jl"
+                },
+                {
+                  "title": "Veri Bilimi: İStatistik ve Makine Öğrenmesi ",
+                  "link": "https://coursera.pxf.io/MXYqYY"
+                },
+                {
+                  "title": "Veri Bilimi için İstatistik",
+                  "link": "https://youtu.be/Vfo5le26IhY"
+                }
+              ]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Programlama Dili",
+          "subtopics": [
+            {
+              "title": "Python",
+              "sources": [
+                {
+                  "title": "Python - OOP ve Veri Yapıları",
+                  "link": "https://www.youtube.com/playlist?list=PLh9ECzBB8tJOoFYmIIiwFjgXDCD9uiD_i"
+                },
+                {
+                  "title": "Python Kullanarak Veri Yapıları",
+                  "link": "https://github.com/OmkarPathak/Data-Structures-using-Python"
+                },
+                {
+                  "title": "Veri Yapıları",
+                  "link": "http://cagataykiziltan.net/veri-yapilari-data-structures/"
+                }
+              ]
+            },
+            {
+              "title": "Cpp",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Linux",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Linux Giriş Eğitimi",
+              "link": "https://gelecegiyazanlar.turkcell.com.tr/konu/egitim/temel-linux-101/linux-egitimine-baslarken"
+            }
+          ]
+        },
+        {
+          "topic": "ROS",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": " ROS Giriş Eğitimi",
+              "link": "https://www.udemy.com/course/temelden-gelismise-python-ile-uygulamali-ros-egitimi/"
+            },
+            {
+              "title": "ROS ile Programlama",
+              "link": "https://www.youtube.com/playlist?list=PLE-BQwvVGf8HOvwXPgtDfWoxd4Cc6ghiP"
+            },
+            {
+              "title": "ROS Eğitimi",
+              "link": "https://www.youtube.com/playlist?list=PLRa72Ydn9zeZhWJZhXhv3FT-Q3jtgG8ew"
+            },
+            {
+              "title": "ROS Tutorials",
+              "link": "http://wiki.ros.org/ROS/Tutorials"
+            }
+          ]
+        },
+        {
+          "topic": "Simülasyon Ortamları",
+          "subtopics": [
+            {
+              "title": "CARLA",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "Gazebo",
+              "sources": [{ "title": "", "link": "" }]
+            },
+            {
+              "title": "SVL",
+              "sources": [{ "title": "", "link": "" }]
+            }
+          ],
+          "sources": [
+            { "title": "", "link": "" },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Görüntü İşleme & Makine Öğrenmesi",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Görüntü İşlemeye Giriş",
+              "link": "https://imp.i115008.net/GaWjk"
+            },
+            {
+              "title": "Görüntü İşlemede Uzmanlaşmak",
+              "link": "https://imp.i115008.net/m9Zdq"
+            },
+            {
+              "title": "Bilgisayarlı Görü ve Görüntü İşlemeye Giriş",
+              "link": "https://coursera.pxf.io/DVM74j"
+            }
+          ]
+        },
+        {
+          "topic": "Localization",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Localization",
+              "link": "https://github.com/AtsushiSakai/PythonRobotics/tree/master/Localization"
+            },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Mapping",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Local Mapping",
+              "link": "http://webdiis.unizar.es/~jminguez/interest7.htm"
+            },
+            {
+              "title": "Local Mapping",
+              "link": "https://docs.nvidia.com/isaac/packages/egm_fusion/doc/local_mapping.html"
+            }
+          ]
+        },
+        {
+          "topic": "Path Planning",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Common used path planning algorithms with animations",
+              "link": "https://github.com/zhm-real/PathPlanning"
+            },
+            {
+              "title": "Planning Algorithms",
+              "link": "http://lavalle.pl/planning/"
+            }
+          ]
+        },
+        {
+          "topic": "Motion Planning",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Robotics: Computational Motion Planning",
+              "link": "https://www.coursera.org/learn/robotics-motion-planning"
+            },
+            {
+              "title": "Principles of Robot Motion: Theory, Algorithms, and Implementations",
+              "link": "http://biorobotics.ri.cmu.edu/book/"
+            },
+            {
+              "title": "Motion Planning in Dynamic Environments",
+              "link": "http://lavalle.pl/tutorials.html"
+            },
+            {
+              "title": "Robot Motion Planning",
+              "link": "https://link.springer.com/book/10.1007/978-1-4615-4022-9"
+            }
+          ]
+        },
+        {
+          "topic": "Path Tracking",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "https://github.com/Pandas-Team/Automatic-Parking",
+              "link": "https://github.com/Pandas-Team/Automatic-Parking"
+            },
+            {
+              "title": "Path Tracking Bicycle",
+              "link": "https://github.com/DongChen06/PathTrackingBicycle"
+            }
+          ]
+        },
+        {
+          "topic": "SLAM",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "SLAM Nedir?",
+              "link": "https://geoslam.com/what-is-slam/"
+            },
+            {
+              "title": "SlAM Ne için Kullanılır?",
+              "link": "https://www.mathworks.com/discovery/slam.html"
+            }
+          ]
+        },
+        {
+          "topic": "Robot Control",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Robotik Roadmap",
+              "link": "https://sarrasor.github.io/RoboticsRoadmap/"
+            },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Navigation",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Papers with Code: Robot Navigation",
+              "link": "https://paperswithcode.com/task/robot-navigation"
+            },
+            {
+              "title": "DRL-robot-navigation",
+              "link": "https://github.com/reiniscimurs/DRL-robot-navigation"
+            },
+            {
+              "title": "Indoor segmentation for robot navigating",
+              "link": "https://github.com/hellochick/Indoor-segmentation"
+            }
+          ]
+        },
+        {
+          "topic": "Formasyon",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Formasyon Eğitimi",
+              "link": "https://www.youtube.com/playlist?list=PLvpJkeZbByrMDjMsl3Irvus012pM3dMzB"
+            },
+            { "title": "", "link": "" }
+          ]
+        },
+        {
+          "topic": "Sürü Algoritmaları",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Sürü Algoritmaları(Teknofest)",
+              "link": "https://www.youtube.com/watch?v=4iqXe2h5wxk"
+            },
+            { "title": "", "link": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Biyoinformatik",
+      "topics": [
+        {
+          "topic": "Biyoinformatik",
+          "subtopics": [],
+          "sources": [
+            {
+              "title": "Biyoinformatik",
+              "link": "https://github.com/ossu/bioinformatics"
+            },
+            {
+              "title": "Biyoinformatik 101 Web Semineri",
+              "link": "https://www.youtube.com/live/2MxicWXN9Ws?feature=share"
+            },
+            {
+              "title": "Biyoinnformatik Veri Tabanları ve Yazılımlar Listesi",
+              "link": "https://www.bioinforange.com/bioinfoguide/rehberler/biyoinformatik-veri-tabanlari-ve-yazilim-listesi-guncel/"
+            },
+            {
+              "title": "Biyoinformatikte Python Programlama Dili",
+              "link": "https://microbiologynote.com/tr/python-programming-language-in-bioinformatics/"
+            },
+            {
+              "title": "Yapay Zeka ile Beyin Mr Görüntüsünde Tümör Segmentasyonu",
+              "link": "https://www.udemy.com/course/tpta-yapay-zeka-beyin-mr-goruntusunden-tumor-segmentasyonu/learn/lecture/21457622#content"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

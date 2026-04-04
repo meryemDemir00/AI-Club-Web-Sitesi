@@ -1,0 +1,51 @@
+{
+    "applications":[
+        {
+            "header":"Koordinasyon Ekibi",
+            "description":"Merhabalar arkadaşlar, Yapay Zeka Topluluğu koordinasyon ekibi içinde yer almak istiyorsanız formu doldurabilirsiniz. ",
+            "link": "https://forms.gle/BhT1JyGVsEEcdB6a8",
+            "imageURL":"",
+            "active" : false,
+            "startDate" : "",
+            "endDate" : "22 Ekim 2023 23.59"
+        }
+        ,
+        {
+            "header":"YZT | TALOS Mekanik ve Elektronik Ekip",
+            "description":"Merhabalar arkadaşlar, TEKNOFEST'in Robotaksi Binek Otonom Araç yarışmasına hazırlanacağız. Bu süreçte araç üretmek için ekip arkadaşları arıyoruz. Cevaplarınızda dürüst olmanızı rica ediyoruz.",
+            "link": "https://forms.gle/6YqzMsZ7r99TtCJD7",
+            "imageURL":"",
+            "active" : false,
+            "startDate" : "",
+            "endDate" : "29 Ekim 2023 23.59"
+        }
+        ,
+        {
+            "header":"Proje Takımları Yapay Zeka ve Yazılım Ekibi",
+            "description":"Merhabalar arkadaşlar, Projelerimize dahil olmak istiyorsanız aşağıdaki formdan katılmak istediğiniz kategoriyi seçip, soruları cevaplayarak başvurabilirsiniz . Cevaplarınızda dürüst olmanızı rica ediyoruz.",
+            "link": "https://forms.gle/sCDDfPoNSxyC3jb86",
+            "imageURL":"",
+            "active" : false,
+            "startDate" : "",
+            "endDate" : "29 Ekim 2023 23.59"
+        },
+        {
+            "header":"Proje Takımları",
+            "description":"",
+            "link": "https://forms.gle/RxHQfWFGFEUxmcV76",
+            "imageURL":"",
+            "active" : true,
+            "startDate" : "",
+            "endDate" : ""
+        },
+        {
+            "header":"Koordinasyon Ekibi",
+            "description":"",
+            "link": "https://forms.gle/225U2sHQaTnorPud9",
+            "imageURL":"",
+            "active" : true,
+            "startDate" : "",
+            "endDate" : ""
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "contact" :
+    [
+        {
+            "name" : "E-Mail",
+            "url" : "yapayzekatoplulugu@uludag.edu.tr",
+            "icon" : ""
+        },
+        {
+            "name" : "",
+            "url" : "",
+            "icon" : ""
+        },
+        {
+            "name" : "",
+            "url" : "",
+            "icon" : ""
+        },
+        {
+            "name" : "",
+            "url" : "",
+            "icon" : ""
+        }
+
+    ]
+}

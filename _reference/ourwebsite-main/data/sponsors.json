@@ -1,0 +1,17 @@
+{
+    "sponsors": [
+        {
+            "id":"0",
+            "name":"Ron Digital",
+            "logo":"ron.png",
+            "startsDate":"2023-01",
+            "finishedDate":"2023-12",
+            "sponsorLig" : "Gold",
+            "category" : "",
+            "description" : "",
+            "websiteURL" : "https://ron.digital",
+            "linkedinURL" : "",
+            "instagramURL" : ""            
+        }
+    ]
+}

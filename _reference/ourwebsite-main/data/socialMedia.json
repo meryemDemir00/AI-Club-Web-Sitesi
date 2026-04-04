@@ -1,0 +1,29 @@
+{
+    "socialMedia":
+    [
+        {
+            "name":"Instagram",
+            "url":"https://www.instagram.com/uludagaiclub/",
+            "icon":""            
+        },
+        {
+            "name": "Twitter",
+            "handle": "twitter.com/realDonaldTrump"
+        },
+        {
+            "name" : "Youtube",
+            "url" : "https://www.youtube.com/@uludagaiclub",
+            "icon" : ""
+        },
+        {
+            "name" : "Linkedin",
+            "url" : "https://www.linkedin.com/company/uludag-universitesi-yapay-zeka-toplulugu/",
+            "icon" : ""
+        },
+        {
+            "name": "Github",
+            "url": "https://github.com/uludagai-club",
+            "icon":""
+        }
+    ]
+}
